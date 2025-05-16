@@ -1,79 +1,101 @@
-import React from "react";
-import { FaFacebookF } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
-
-export default function Portfolio() {
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white text-gray-800 p-6">
-      {/* Home */}
-      <section className="text-center py-12">
-        <img
-          src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf_&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6"
-          alt="Quynh Trang Avatar"
-          className="mx-auto rounded-full w-40 h-40 object-cover shadow-lg"
-        />
-        <h1 className="text-4xl font-bold mt-6">Hello, I'm Quynh Trang</h1>
-        <a
-          href="https://www.facebook.com/quynhhhhtrangg/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center mt-4 text-blue-600 hover:text-blue-800"
-        >
-          <FaFacebookF className="mr-2" /> Facebook
-        </a>
-      </section>
-
-      {/* About Me */}
-      <section className="max-w-2xl mx-auto py-8">
-        <h2 className="text-3xl font-semibold mb-4">About Me</h2>
-        <p className="mb-2 font-medium">I'm Quynh Trang</p>
-        <p className="mb-4 italic">Content Creator</p>
-        <p className="mb-4">
-          I aim to build a career in digital content creation, especially on social media platforms. In the short term, I focus on developing skills in idea generation, content production, and trend analysis to create effective media products. In the long run, I aspire to become a professional content creator who contributes to media strategies and enhances brand value.
-        </p>
-        <p>Email: <a href="mailto:haanhh2204@gmail.com" className="text-blue-600">haanhh2204@gmail.com</a></p>
-        <p>Address: Cau Giay, Hanoi</p>
-        <a
-          href="https://drive.google.com/file/d/1FwC7Zq4mb0OA3i39Tr5IGceT605d6BVP/view"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button className="mt-4">View Resume</Button>
-        </a>
-      </section>
-
-      {/* Skills */}
-      <section className="max-w-2xl mx-auto py-8">
-        <h2 className="text-2xl font-semibold mb-4">Skills</h2>
-        <ul className="list-disc pl-6 space-y-2">
-          <li>Basic communication and negotiation with clients</li>
-          <li>Proficiency in basic office tools</li>
-          <li>Strong writing and creative content skills</li>
-          <li>Teamwork and cross-department collaboration</li>
-          <li>Adaptability and problem-solving</li>
-          <li>Proficient in Canva, Capcut, and other design/editing tools</li>
-        </ul>
-      </section>
-
-      {/* Abilities */}
-      <section className="max-w-2xl mx-auto py-8">
-        <h2 className="text-2xl font-semibold mb-4">Abilities</h2>
-        <p className="mb-2 font-medium">Electric Power University – Media Team</p>
-        <ul className="list-disc pl-6 space-y-2">
-          <li>Ideated and supported gala and school event organization</li>
-          <li>Managed the club’s Facebook page and increased student engagement</li>
-          <li>Planned and promoted major events like Student Day and workshops</li>
-          <li>Worked on internal communication campaigns and student outreach</li>
-        </ul>
-      </section>
-
-      {/* Education */}
-      <section className="max-w-2xl mx-auto py-8">
-        <h2 className="text-2xl font-semibold mb-4">My Education</h2>
-        <p className="italic mb-2">"Education is not the learning of facts, but the training of the mind to think."</p>
-        <p>Electric Power University (2021–2025)</p>
-        <p>Major: Business Administration</p>
-      </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quynh Trang Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f4f4f4;
+      color: #333;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    header, section {
+      margin-bottom: 30px;
+    }
+    h1, h2 {
+      color: #444;
+    }
+    .avatar {
+      width: 150px;
+      border-radius: 50%;
+    }
+    .social {
+      margin-top: 10px;
+    }
+    .social a {
+      color: #1877f2;
+      font-size: 24px;
+      margin-right: 10px;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hello, I'm Quynh Trang</h1>
+    <img class="avatar" src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf_&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6" alt="Avatar" />
+    <div class="social">
+      <a href="https://www.facebook.com/quynhhhhtrangg/" target="_blank"><i class="fab fa-facebook"></i></a>
     </div>
-  );
-}
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>I'm Quynh Trang</p>
+    <p><strong>Content Creator</strong></p>
+    <p>
+      I aspire to develop a career in digital content creation, especially on social media platforms. In the short term, I aim to improve my skills in ideation, content production, and trend analysis to deliver effective media products. In the long term, I strive to become a professional Content Creator who can contribute to communication strategies and enhance brand value.
+    </p>
+    <p>Email: haanhh2204@gmail.com<br />
+    Address: Cau Giay, Hanoi</p>
+    <a class="button" href="https://drive.google.com/file/d/1FwC7Zq4mb0OA3i39Tr5IGceT605d6BVP/view" target="_blank">View Resume</a>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>Basic communication and negotiation with customers</li>
+      <li>Proficient in basic office tools</li>
+      <li>Writing and creating diverse content</li>
+      <li>Teamwork and cross-department coordination</li>
+      <li>Adaptability and problem-solving</li>
+      <li>Proficient in design/editing tools: Canva, Capcut, etc.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Abilities</h2>
+    <p><strong>Electric Power University</strong> – Communication Team</p>
+    <ul>
+      <li>Ideated and supported implementation of galas and school celebration events</li>
+      <li>Managed the club’s Fanpage to increase engagement and attract student participation</li>
+      <li>Participated in planning, coordination, and promotion of events such as Student Day, academic seminars, and performances</li>
+      <li>Collaborated on internal communication campaigns to spread messages and connect students</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>My Education</h2>
+    <p><em>"Education is not the learning of facts, but the training of the mind to think."</em></p>
+    <p><strong>Electric Power University</strong> (2021–2025)<br />
+    Major: Business Administration</p>
+  </section>
+</body>
+</html>
