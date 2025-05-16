@@ -5,152 +5,176 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Quynh Trang Portfolio</title>
 <style>
-  /* Reset & base */
+  /* Reset */
   * {
     margin: 0; padding: 0; box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
-  body {
-    background: #121212;
+  body, html {
+    height: 100%;
+    background-color: #121212;
     color: #eee;
-    min-height: 100vh;
+  }
+  #container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Sidebar */
+  #sidebar {
+    width: 280px;
+    background-color: #1f1f1f;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
   }
-  header {
-    background: #1f1f1f;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: flex-end;
-    gap: 2rem;
+  #sidebar img.avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px solid #1db954;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
   }
-  header a {
+  #sidebar h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    color: #1db954;
+  }
+
+  /* Nav */
+  #nav {
+    width: 100%;
+  }
+  #nav ul {
+    list-style: none;
+  }
+  #nav li {
+    margin-bottom: 1.5rem;
+  }
+  #nav button {
+    width: 100%;
+    background: none;
+    border: none;
     color: #eee;
-    text-decoration: none;
-    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: left;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
     cursor: pointer;
-    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: background-color 0.3s ease;
   }
-  header a:hover {
-    color: #1db954; /* nice green */
+  #nav button:hover, #nav button.active {
+    background-color: #1db954;
+    color: #121212;
+  }
+  #nav svg {
+    fill: currentColor;
+    width: 22px;
+    height: 22px;
   }
 
-  main {
+  /* Content */
+  #content {
     flex: 1;
-    padding: 3rem 2rem;
+    padding: 3rem 4rem;
+    overflow-y: auto;
   }
-
   section {
     display: none;
+    animation: fadeIn 0.5s ease forwards;
   }
   section.active {
     display: block;
   }
 
-  /* Home */
-  #home h1 {
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
-    color: #1db954;
-  }
-  #home p {
-    font-size: 1.3rem;
-    color: #ccc;
+  /* Fade in animation */
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
   }
 
-  /* About Me */
-  #about {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
+  /* Social links under avatar */
+  #social {
+    margin-top: auto;
+    display: flex;
+    gap: 1rem;
   }
-  #about img.avatar {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #1db954;
-    margin-bottom: 1.5rem;
-  }
-  #about h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #1db954;
-  }
-  #about p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    color: #ccc;
-  }
-  #about .social-links a {
-    display: inline-block;
-    margin: 0 0.8rem;
+  #social a {
     color: #eee;
-    font-size: 1.8rem;
     transition: color 0.3s ease;
   }
-  #about .social-links a:hover {
+  #social a:hover {
     color: #1877f2; /* facebook blue */
   }
-  /* Facebook icon SVG */
-  #about .social-links svg {
-    width: 30px;
-    height: 30px;
-    vertical-align: middle;
+  #social svg {
+    width: 28px;
+    height: 28px;
     fill: currentColor;
   }
 </style>
 </head>
 <body>
 
-<header>
-  <a href="#" data-target="home" class="nav-link active">Home</a>
-  <a href="#" data-target="about" class="nav-link">About Me</a>
-</header>
-
-<main>
-  <section id="home" class="active">
-    <h1>Xin chào, tôi là Quynh Trang</h1>
-    <p>Welcome to my personal portfolio!</p>
-  </section>
-
-  <section id="about">
+<div id="container">
+  <aside id="sidebar">
     <img
       class="avatar"
       src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf_&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6"
       alt="Quynh Trang"
     />
-    <h2>About Me</h2>
-    <p>Content Creator passionate about digital media and storytelling.</p>
-    <div class="social-links">
+    <h2>Quynh Trang</h2>
+    <nav id="nav">
+      <ul>
+        <li><button class="nav-btn active" data-section="home">
+          <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg> Home
+        </button></li>
+        <li><button class="nav-btn" data-section="about">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M12 14c-4 0-7 2-7 5v1h14v-1c0-3-3-5-7-5z"/></svg> About Me
+        </button></li>
+      </ul>
+    </nav>
+    <div id="social">
       <a href="https://www.facebook.com/quynhhhhtrangg/" target="_blank" aria-label="Facebook">
-        <!-- Facebook SVG Icon -->
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.466.099 2.797.143v3.243l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.312h3.588l-.467 3.622h-3.12V24h6.116c.73 0 1.326-.597 1.326-1.326V1.326C24 .597 23.403 0 22.675 0z"/>
         </svg>
       </a>
     </div>
-  </section>
-</main>
+  </aside>
+
+  <main id="content">
+    <section id="home" class="active">
+      <h1>Xin chào, tôi là Quynh Trang</h1>
+      <p>Chào mừng bạn đến với trang cá nhân của tôi!</p>
+    </section>
+    <section id="about">
+      <h1>About Me</h1>
+      <p>Mình là người đam mê sáng tạo nội dung số và kể chuyện qua các nền tảng kỹ thuật số.</p>
+    </section>
+  </main>
+</div>
 
 <script>
-  // Navigation link switching
-  const navLinks = document.querySelectorAll('.nav-link');
+  // Navigation functionality
+  const navButtons = document.querySelectorAll('.nav-btn');
   const sections = document.querySelectorAll('main section');
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('data-target');
+  navButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active from all buttons and sections
+      navButtons.forEach(b => b.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
 
-      // Toggle active on nav links
-      navLinks.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
-
-      // Show target section only
-      sections.forEach(sec => {
-        sec.id === targetId ? sec.classList.add('active') : sec.classList.remove('active');
-      });
+      // Activate clicked button and corresponding section
+      btn.classList.add('active');
+      const targetId = btn.getAttribute('data-section');
+      document.getElementById(targetId).classList.add('active');
     });
   });
 </script>
