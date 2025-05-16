@@ -1,71 +1,79 @@
 import React from "react";
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
 
 export default function Portfolio() {
   return (
-    <main className="min-h-screen bg-cover bg-center text-white font-sans" style={{ backgroundImage: "url('https://png.pngtree.com/thumb_back/fh260/background/20250228/pngtree-a-photograph-of-beautiful-sky-at-dusk-with-soft-pink-and-image_17029677.jpg')" }}>
-      {/* Home Section */}
-      <section id="home" className="h-screen flex items-center justify-center bg-black/50">
-        <h1 className="text-5xl font-bold">Hello, I'm Quynh Trang</h1>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-16 px-8 bg-black/60">
-        <div className="max-w-4xl mx-auto text-center">
-          <img src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf_&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6" alt="Avatar" className="w-40 h-40 rounded-full mx-auto mb-4 border-4 border-white" />
-          <h2 className="text-3xl font-bold">I'm Quynh Trang</h2>
-          <p className="italic">Content Creator</p>
-          <p className="mt-4 max-w-xl mx-auto">I aspire to build a career in digital content creation, especially on social media platforms. In the short term, I focus on improving my skills in ideation, content production, and trend analysis to deliver effective media products. In the long run, I aim to become a professional Content Creator who contributes to communication strategies and brand value.</p>
-          <div className="mt-6">
-            <p>Email: haanhh2204@gmail.com</p>
-            <p>Address: Cau Giay, Hanoi</p>
-            <a href="https://www.facebook.com/quynhhhhtrangg/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-4 text-blue-400 hover:underline">
-              <FaFacebook size={20} /> Facebook
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Resume Section */}
-      <section id="resume" className="py-16 px-8 bg-black/70 text-center">
-        <h2 className="text-3xl font-bold mb-4">Resume</h2>
-        <a href="/mnt/data/Pham-Quynh-Trang-TopCV.vn-170525.21809.pdf" download className="inline-block px-6 py-3 bg-white text-black rounded-md font-semibold hover:bg-gray-200 transition">
-          Download My Resume
+    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white text-gray-800 p-6">
+      {/* Home */}
+      <section className="text-center py-12">
+        <img
+          src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf_&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6"
+          alt="Quynh Trang Avatar"
+          className="mx-auto rounded-full w-40 h-40 object-cover shadow-lg"
+        />
+        <h1 className="text-4xl font-bold mt-6">Hello, I'm Quynh Trang</h1>
+        <a
+          href="https://www.facebook.com/quynhhhhtrangg/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center mt-4 text-blue-600 hover:text-blue-800"
+        >
+          <FaFacebookF className="mr-2" /> Facebook
         </a>
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-16 px-8 bg-black/60">
-        <h2 className="text-3xl font-bold text-center mb-6">Skills</h2>
-        <ul className="max-w-xl mx-auto list-disc list-inside space-y-2">
+      {/* About Me */}
+      <section className="max-w-2xl mx-auto py-8">
+        <h2 className="text-3xl font-semibold mb-4">About Me</h2>
+        <p className="mb-2 font-medium">I'm Quynh Trang</p>
+        <p className="mb-4 italic">Content Creator</p>
+        <p className="mb-4">
+          I aim to build a career in digital content creation, especially on social media platforms. In the short term, I focus on developing skills in idea generation, content production, and trend analysis to create effective media products. In the long run, I aspire to become a professional content creator who contributes to media strategies and enhances brand value.
+        </p>
+        <p>Email: <a href="mailto:haanhh2204@gmail.com" className="text-blue-600">haanhh2204@gmail.com</a></p>
+        <p>Address: Cau Giay, Hanoi</p>
+        <a
+          href="https://drive.google.com/file/d/1FwC7Zq4mb0OA3i39Tr5IGceT605d6BVP/view"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button className="mt-4">View Resume</Button>
+        </a>
+      </section>
+
+      {/* Skills */}
+      <section className="max-w-2xl mx-auto py-8">
+        <h2 className="text-2xl font-semibold mb-4">Skills</h2>
+        <ul className="list-disc pl-6 space-y-2">
           <li>Basic communication and negotiation with clients</li>
-          <li>Proficient in office tools</li>
-          <li>Creative writing and content development</li>
-          <li>Teamwork and cross-functional collaboration</li>
+          <li>Proficiency in basic office tools</li>
+          <li>Strong writing and creative content skills</li>
+          <li>Teamwork and cross-department collaboration</li>
           <li>Adaptability and problem-solving</li>
-          <li>Skilled in design/editing tools: Canva, Capcut,...</li>
+          <li>Proficient in Canva, Capcut, and other design/editing tools</li>
         </ul>
       </section>
 
-      {/* Abilities Section */}
-      <section id="abilities" className="py-16 px-8 bg-black/60">
-        <h2 className="text-3xl font-bold text-center mb-6">Abilities</h2>
-        <p className="text-center font-semibold">Electric Power University — Media Club</p>
-        <ul className="max-w-2xl mx-auto list-disc list-inside space-y-2 mt-4">
-          <li>Ideated and supported the execution of school events and galas</li>
-          <li>Managed the club's fanpage to boost student engagement</li>
-          <li>Contributed to planning and promoting events like Student Day, workshops, and performances</li>
-          <li>Collaborated with the team on internal media campaigns to connect students and spread messages</li>
+      {/* Abilities */}
+      <section className="max-w-2xl mx-auto py-8">
+        <h2 className="text-2xl font-semibold mb-4">Abilities</h2>
+        <p className="mb-2 font-medium">Electric Power University – Media Team</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>Ideated and supported gala and school event organization</li>
+          <li>Managed the club’s Facebook page and increased student engagement</li>
+          <li>Planned and promoted major events like Student Day and workshops</li>
+          <li>Worked on internal communication campaigns and student outreach</li>
         </ul>
       </section>
 
-      {/* Education Section */}
-      <section id="education" className="py-16 px-8 bg-black/70 text-center">
-        <h2 className="text-3xl font-bold mb-4">My Education</h2>
-        <blockquote className="italic mb-4">"Education is not the learning of facts, but the training of the mind to think."</blockquote>
-        <p className="font-semibold">Electric Power University (2021–2025)</p>
+      {/* Education */}
+      <section className="max-w-2xl mx-auto py-8">
+        <h2 className="text-2xl font-semibold mb-4">My Education</h2>
+        <p className="italic mb-2">"Education is not the learning of facts, but the training of the mind to think."</p>
+        <p>Electric Power University (2021–2025)</p>
         <p>Major: Business Administration</p>
       </section>
-    </main>
+    </div>
   );
 }
