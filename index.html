@@ -1,201 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Quynh Trang Portfolio</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f9;
-      color: #333;
-    }
-    header {
-      background: #004aad;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    nav {
-      margin-top: 1rem;
-    }
-    nav a {
-      color: white;
-      margin: 0 0.7rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    h2 {
-      border-bottom: 2px solid #004aad;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-      color: #004aad;
-    }
-    /* Home section */
-    #home {
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-    /* About Me */
-    #about-me {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    #about-me img.avatar {
-      border-radius: 50%;
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border: 4px solid #004aad;
-      flex-shrink: 0;
-    }
-    #about-me .about-text {
-      flex: 1;
-      min-width: 280px;
-    }
-    #about-me .about-text p {
-      line-height: 1.6;
-    }
-    /* Facebook icon link */
-    .facebook-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin: 0.7rem 0;
-      text-decoration: none;
-      color: #1877f2;
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-    .facebook-link svg {
-      width: 24px;
-      height: 24px;
-      fill: #1877f2;
-      transition: fill 0.3s;
-    }
-    .facebook-link:hover svg {
-      fill: #0f4ab8;
-    }
-    /* Resume button */
-    .resume-btn {
-      background-color: #004aad;
-      color: white;
-      border: none;
-      padding: 0.6rem 1.2rem;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 1rem;
-      margin-top: 1rem;
-      display: inline-block;
-      text-decoration: none;
-    }
-    .resume-btn:hover {
-      background-color: #00307d;
-    }
-    /* Lists */
-    ul.skills-list,
-    ul.abilities-list {
-      list-style: disc inside;
-      margin: 0;
-      padding-left: 1rem;
-    }
-    /* Projects images */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
-    }
-    .projects-grid img {
-      width: 100%;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-    /* Experience */
-    .experience-item {
-      margin-bottom: 1rem;
-    }
-    .experience-item h4 {
-      margin: 0;
-      font-weight: 700;
-      color: #004aad;
-    }
-    .experience-item ul {
-      margin-top: 0.3rem;
-      padding-left: 1.2rem;
-      list-style: disc;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quynh Trang Portfolio</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0;
+    background: #f7f7f7;
+    color: #333;
+  }
+  header {
+    background: #1a1a1a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  nav {
+    background: #222;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 0;
+  }
+  nav a {
+    color: #ddd;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #00aaff;
+  }
+  main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px 40px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 12px #ccc;
+  }
+  section {
+    margin-bottom: 40px;
+  }
+  h1, h2, h3 {
+    color: #1a1a1a;
+  }
+  .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px auto;
+    box-shadow: 0 0 12px #aaa;
+  }
+  .facebook-link {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .facebook-link a {
+    text-decoration: none;
+    font-size: 30px;
+    color: #1877f2;
+    display: inline-block;
+    transition: color 0.3s ease;
+  }
+  .facebook-link a:hover {
+    color: #0b51c6;
+  }
+  .facebook-icon {
+    vertical-align: middle;
+  }
+  button {
+    background: #0077cc;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background: #005fa3;
+  }
+  ul.skills-list, ul.abilities-list {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 20px;
+  }
+  .projects-grid img {
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 0 8px #bbb;
+  }
+  .experience-item {
+    margin-bottom: 20px;
+  }
+  .experience-item strong {
+    display: block;
+    margin-bottom: 6px;
+  }
+  footer {
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    color: #777;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Hey, I’m Quynh Trang.</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about-me">About Me</a>
-      <a href="#skills">Skills</a>
-      <a href="#abilities">Abilities</a>
-      <a href="#education">My Education</a>
-      <a href="#projects">Projects Made</a>
-      <a href="#experience">Experience</a>
-    </nav>
-  </header>
 
-  <main>
-    <section id="home">
-      <p>Welcome to my personal portfolio website!</p>
-    </section>
+<header>
+  <h1>Hey, I’m Quynh Trang.</h1>
+</header>
 
-    <section id="about-me">
-      <img 
-        src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf_&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6" 
-        alt="Quynh Trang avatar" 
-        class="avatar" 
-      />
-      <div class="about-text">
-        <h2>I'm Quynh Trang</h2>
-        <p>Content Creator</p>
-        <p>
-          I aspire to build a career in digital content creation, particularly on social media platforms. In the short term, I am focused on developing my skills in ideation, content production, and trend analysis to create effective communication materials. In the long term, I aim to become a professional Content Creator who can contribute meaningfully to communication strategies and enhance brand value.
-        </p>
-        <p><strong>Email:</strong> haanhh2204@gmail.com</p>
-        <p><strong>Location:</strong> Cau Giay District, Hanoi</p>
+<nav>
+  <a href="#home" onclick="showSection('home')">Home</a>
+  <a href="#about" onclick="showSection('about')">About Me</a>
+  <a href="#skills" onclick="showSection('skills')">Skills</a>
+  <a href="#abilities" onclick="showSection('abilities')">Abilities</a>
+  <a href="#education" onclick="showSection('education')">My Education</a>
+  <a href="#projects" onclick="showSection('projects')">Projects Made</a>
+  <a href="#experience" onclick="showSection('experience')">Experience</a>
+</nav>
 
-        <a href="file:///C:/Users/HP/Downloads/Pham-Quynh-Trang-TopCV.vn-170525.21809.pdf" target="_blank" class="resume-btn">View Resume</a>
+<main>
+  <section id="home" style="display: block;">
+    <h2>Welcome</h2>
+    <p>Hey, I’m Quynh Trang. Thank you for visiting my personal portfolio!</p>
+  </section>
 
-        <br/>
-        <a href="https://www.facebook.com/quynhhhhtrangg/" target="_blank" class="facebook-link" aria-label="Facebook profile">
-          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
-            <path d="M22.675 0h-21.35C.594 0 0 .594 0 1.325v21.351C0 23.406.594 24 1.325 24H12.82v-9.294H9.692v-3.622h3.127V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.312h3.59l-.467 3.622h-3.123V24h6.116c.73 0 1.324-.594 1.324-1.324V1.325C24 .594 23.406 0 22.675 0z"/>
-          </svg>
-          Facebook
-        </a>
-      </div>
-    </section>
+  <section id="about" style="display: none; text-align: center;">
+    <img
+      class="avatar"
+      src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf_&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6"
+      alt="Quynh Trang Avatar"
+    />
+    <h2>I'm Quynh Trang</h2>
+    <h3>Content Creator</h3>
+    <p>
+      I aspire to build a career in digital content creation, particularly on social media platforms. In the short term, I am focused on developing my skills in ideation, content production, and trend analysis to create effective communication materials. In the long term, I aim to become a professional Content Creator who can contribute meaningfully to communication strategies and enhance brand value.
+    </p>
+    <p>Email: <a href="mailto:haanhh2204@gmail.com">haanhh2204@gmail.com</a></p>
+    <p>Location: Cau Giay District, Hanoi</p>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul class="
+    <div class="facebook-link">
+      <a href="https://www.facebook.com/quynhhhhtrangg/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg class="facebook-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#1877f2" viewBox="0 0 24 24">
+          <path d="M22.675 0h-21.35C.592 0 0 .593 0 1.326v21.348C0 23.408.592 24 1.325 24h11.497v-9.294H9.691v-3.622h3.131V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.466.098 2.797.142v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.31h3.59l-.467 3.622h-3.123V24h6.116c.73 0 1.322-.592 1.322-1.326V1.326C24 .593 23.408 0 22.675 0z"/>
+        </svg>
+      </a>
+    </div>
+
+    <a href="file:///C:/Users/HP/Downloads/Pham-Quynh-Trang-TopCV.vn-170525.21809.pdf" target="_blank" rel="noopener noreferrer">
+      <button>View Resume</button>
+    </a>
+  </section>
+
+  <section id="skills" style="display:none;">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Basic communication and negotiation skills with clients.</li>
+      <li>Proficient in essential office software.</li>
+      <li>Strong writing skills and ability to create diverse content.</li>
+      <li>Active and creative in content idea generation.</li>
+      <li>Good sense of design and proficiency in design software.</li>
+      <li>Ability to engage and connect with audiences through social media.</li>
+      <li>Self-learning and adaptation skills.</li>
+    </ul>
+  </section>
+
+  <section id="abilities" style="display:none;">
+    <h2>Abilities</h2>
+    <ul class="abilities-list">
+      <li>Teamwork and leadership skills.</li>
+      <li>Good time management and work discipline.</li>
+      <li>Effective communication skills.</li>
+      <li>Ability to analyze and evaluate content and trends.</li>
+      <li>Handling and resolving issues creatively.</li>
+      <li>Continuous learning and improvement.</li>
+      <li>Work independently or in groups effectively.</li>
+    </ul>
+  </section>
+
+  <section id="education" style="display:none;">
+    <h2>My Education</h2>
+    <p>Currently studying <strong>Social Media Content Creation</strong> and <strong>Digital Marketing</strong> at TopCV Academy.</p>
+  </section>
+
+  <section id="projects" style="display:none;">
+    <h2>Projects Made</h2>
+    <div class="projects-grid">
+      <img src="https://i.ibb.co/tLHZnvX/image.jpg" alt="Project 1" />
+      <img src="https://i.ibb.co/9s2xnLn/image.jpg" alt="Project 2" />
+      <img src="https://i.ibb.co/ck1SGFJ/image.jpg" alt="Project 3" />
+      <img src="https://i.ibb.co/hVV3xL7/image.jpg" alt="Project 4" />
+    </div>
+  </section>
+
+  <section id="experience" style="display:none;">
+    <h2>Experience</h2>
+
+    <div class="experience-item">
+      <strong>September 2021 - Present:</strong> Participated in and completed Social Media Content Creation and Digital Marketing courses at TopCV Academy.
+    </div>
+    <div class="experience-item">
+      <strong>January 2023 - Present:</strong> Interned at Webtretho Online Community as a Content Creator.
+    </div>
+    <div class="experience-item">
+      <strong>July 2023 - Present:</strong> Currently working as a freelance Content Creator.
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Quynh Trang. All rights reserved.
+</footer>
+
+<script>
+  function showSection(sectionId) {
+    const sections = document.querySelectorAll('main > section');
+    sections.forEach(sec => {
+      sec.style.display = (sec.id === sectionId) ? 'block' : 'none';
+    });
+    window.location.hash = sectionId;
+  }
+
+  // Show the section on page load based on hash
+  window.addEventListener('load', () => {
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+      showSection(hash);
+    }
+  });
+</script>
+
+</body>
+</html>
