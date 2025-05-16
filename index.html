@@ -2,324 +2,330 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Quynh Trang - Portfolio</title>
   <style>
-    /* Reset and basics */
+    /* IMPORT GOOGLE FONTS */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    /* RESET */
     * {
-      margin:0; padding:0; box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0; box-sizing: border-box;
       scroll-behavior: smooth;
     }
-    body {
-      background: #121212;
-      color: #eee;
-      line-height: 1.6;
+    html, body {
+      font-family: 'Montserrat', sans-serif;
       font-size: 16px;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      padding: 100px 15px 60px; /* padding-top for fixed nav */
+      line-height: 1.6;
+      background: #f9fafd;
+      color: #212121;
+      height: 100%;
     }
 
     a {
-      color: #58a6ff;
+      color: #1774f2;
       text-decoration: none;
       transition: color 0.3s ease;
     }
     a:hover, a:focus {
-      color: #1c64f2;
-      outline:none;
+      color: #0d46aa;
+      outline: none;
+    }
+
+    /* NAVIGATION */
+    nav {
+      width: 100%;
+      height: 70px;
+      background: #fff;
+      position: fixed;
+      top: 0; left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    nav ul li {
+      cursor: pointer;
+      padding: 10px 15px;
+      border-radius: 12px;
+      color: #1774f2;
+      user-select: none;
+      display: flex;
+      align-items: center;
+    }
+    nav ul li.active,
+    nav ul li:hover {
+      background-color: #1774f2;
+      color: #fff;
+      box-shadow: 0 0 15px #1774f2aa;
+      transition: all 0.3s ease;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      margin-top: 100px;
+      padding: 0 20px 60px;
     }
 
     header {
-      max-width: 720px;
-      width: 100%;
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 60px;
       position: relative;
     }
-
     header h1 {
-      font-size: 3rem;
-      font-weight: 900;
-      margin-bottom: 12px;
-      color: #58a6ff;
+      font-weight: 700;
+      font-size: 3.3rem;
+      color: #1774f2;
+      margin-bottom: 24px;
       user-select:none;
     }
-
     header img.avatar {
       border-radius: 50%;
       width: 180px;
       height: 180px;
       object-fit: cover;
-      border: 4px solid #58a6ff;
-      box-shadow: 0 0 10px #58a6ffaa;
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
+      border: 4px solid #1774f2;
+      box-shadow: 0 2px 15px rgba(23,116,242,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
     header img.avatar:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #1c64f2aa;
+      transform: scale(1.08);
+      box-shadow: 0 4px 25px rgba(23,116,242,0.5);
     }
 
-    /* Fixed top navigation menu */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: #121212ee;
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #58a6ff88;
-      box-shadow: 0 2px 8px rgb(24 39 63 / 0.1);
-      z-index: 9999;
-      height: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      user-select:none;
-    }
-    nav ul {
-      list-style:none;
-      display: flex;
-      gap: 30px;
-      font-weight: 700;
-    }
-    nav ul li {
-      font-size: 1rem;
-      cursor: pointer;
-      padding: 8px 10px;
-      border-radius: 6px;
-      color: #58a6ff;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    nav ul li:hover,
-    nav ul li.active {
-      background-color: #1c64f2;
-      color: white;
-      box-shadow: 0 0 15px #1c64f2bb;
-    }
-
-    /* About Me Facebook icon link */
+    /* Facebook About Me Button */
     .about-link {
       position: absolute;
       right: 0;
       top: 50%;
       transform: translateY(-50%);
+      background-color: #1774f2;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 0 15px #1774f2aa;
       display: flex;
       align-items: center;
       gap: 10px;
-      font-weight: 700;
-      background: #1c64f2;
-      padding: 10px 15px;
-      border-radius: 30px;
-      box-shadow: 0 0 12px #1c64f2aa;
-      cursor: pointer;
-      user-select:none;
+      user-select: none;
       text-transform: uppercase;
-      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      white-space: nowrap;
     }
     .about-link i {
       font-size: 1.3rem;
-      color: #fff;
     }
-    .about-link:hover {
-      background: #58a6ff;
-      box-shadow: 0 0 20px #58a6ffdd;
-      color: #fff;
-    }
-
-    main {
-      max-width: 720px;
-      width: 100%;
+    .about-link:hover,
+    .about-link:focus {
+      background-color: #0d46aa;
+      box-shadow: 0 0 22px #0d46aabb;
+      outline:none;
     }
 
     section {
-      margin-bottom: 48px;
-      border-left: 4px solid #58a6ff;
       padding-left: 18px;
-      transition: border-color 0.3s ease;
-      scroll-margin-top: 80px; /* offset for fixed nav */
+      border-left: 5px solid #1774f2;
+      margin-bottom: 60px;
+      scroll-margin-top: 90px;
     }
     section:hover {
-      border-color: #1c64f2;
+      border-left-color: #0d46aa;
     }
     section h2 {
-      font-size: 1.8rem;
-      font-weight: 800;
-      margin-bottom: 18px;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #1774f2;
       user-select:none;
-      color: #58a6ff;
     }
 
-    /* About section */
+    /* About Content */
     .about-content p {
-      margin-bottom: 12px;
-      font-size: 1rem;
-      font-weight: 400;
-      max-width: 600px;
+      margin-bottom: 18px;
+      color: #3a3a3a;
+      font-size: 1.05rem;
+      max-width: 650px;
     }
-    .about-content p:nth-child(1) {
-      font-size: 1.4rem;
-      font-weight: bold;
-      margin-top: 8px;
-      color: #1c64f2;
+    .about-content p:first-child {
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #0d46aa;
     }
     .about-content p:nth-child(2) {
-      font-weight: 600;
-      margin-bottom: 12px;
       font-style: italic;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: #1774f2;
     }
     .about-content a.resume-btn {
+      border: 2px solid #1774f2;
+      background-color: transparent;
+      color: #1774f2;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 30px;
+      padding: 12px 38px;
       display: inline-block;
-      background: transparent;
-      border: 2px solid #58a6ff;
-      color: #58a6ff;
-      padding: 10px 28px;
-      border-radius: 25px;
-      font-weight: 600;
       cursor: pointer;
-      transition: all 0.3s ease;
       user-select:none;
-      margin-top: 12px;
-      text-decoration:none;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     }
-    .about-content a.resume-btn:hover {
-      background: #1c64f2;
-      border-color: #1c64f2;
-      color: #fff;
-      box-shadow: 0 0 15px #1c64f2cc;
+    .about-content a.resume-btn:hover,
+    .about-content a.resume-btn:focus {
+      background-color: #1774f2;
+      color: white;
+      box-shadow: 0 0 30px #1774f2cc;
+      outline: none;
     }
 
-    /* Lists style */
+    /* Lists with circles */
     ul {
       list-style-type: disc;
-      margin-left: 20px;
-      max-width: 680px;
-      color: #ccc;
+      margin-left: 24px;
+      color: #4d4d4d;
     }
     ul li {
-      margin-bottom: 10px;
-      font-weight: 400;
+      margin-bottom: 12px;
+      font-weight: 500;
+      line-height: 1.5;
     }
 
-    /* Projects images grid */
+    /* Projects grid */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
     }
     .projects-grid img {
       width: 100%;
       height: 160px;
+      border-radius: 12px;
       object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 0 12px #58a6ff44;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
+      box-shadow: 0 4px 20px rgb(23 116 242 / 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .projects-grid img:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 25px #1c64f2aa;
+      box-shadow: 0 8px 32px rgb(23 116 242 / 0.35);
     }
 
-    /* Experience list style */
+    /* Experience */
     .experience-item {
+      margin-bottom: 40px;
+      color: #4a4a4a;
       max-width: 700px;
-      margin-bottom: 24px;
-      color: #ddd;
     }
     .experience-item h3 {
       font-weight: 700;
-      font-size: 1.2rem;
-      color: #58a6ff;
-      margin-bottom: 4px;
+      font-size: 1.28rem;
+      color: #1774f2;
+      margin-bottom: 8px;
       user-select:none;
     }
     .experience-item .date {
+      color: #7284a7;
       font-style: italic;
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-      color: #aabbee;
+      font-weight: 600;
+      margin-bottom: 16px;
       user-select:none;
     }
     .experience-item ul {
       list-style-type: disc;
-      margin-left: 20px;
-      max-width: 650px;
-      color: #ccc;
+      margin-left: 22px;
+      color: #555555;
     }
     .experience-item ul li {
-      margin-bottom: 6px;
-      font-weight: 400;
+      margin-bottom: 10px;
+      line-height: 1.5;
     }
 
-    /* Contact section */
+    /* Contact */
+    #contact p {
+      max-width: 660px;
+      margin-bottom: 18px;
+      color: #4a4a4a;
+      font-size: 1rem;
+      font-weight: 500;
+    }
     .contact-info {
-      max-width: 680px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      color: #ccc;
-      font-weight: 500;
-      font-size: 1rem;
-      user-select:none;
+      gap: 18px;
+      max-width: 660px;
+      font-weight: 700;
+      color: #555555;
     }
-    .contact-info a {
-      color: #58a6ff;
-      word-break: break-word;
-    }
-
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      color: #aaa;
+      gap: 14px;
+      user-select:none;
     }
     .contact-item i {
-      color: #58a6ff;
-      font-size: 1.2rem;
-      width: 22px;
+      font-size: 1.3rem;
+      color: #1774f2;
+      width: 28px;
       text-align: center;
-    }
-
-    footer {
-      margin-top: 60px;
-      max-width: 720px;
-      text-align: center;
-      font-size: 1rem;
-      color: #666;
-      user-select:none;
     }
 
     /* Responsive */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-      header img.avatar {
-        width: 120px;
-        height: 120px;
+    @media (max-width: 760px) {
+      main {
+        margin-top: 80px;
+        padding: 0 15px 40px;
       }
       .projects-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
       }
+    }
 
+    @media (max-width: 480px) {
       nav ul {
         gap: 15px;
       }
       nav ul li {
+        padding: 8px 12px;
         font-size: 0.9rem;
-        padding: 6px 8px;
+      }
+      main {
+        margin-top: 70px;
+        padding: 0 12px 30px;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      header h1 {
+        font-size: 2.6rem;
+        margin-bottom: 18px;
+      }
+      header img.avatar {
+        width: 140px;
+        height: 140px;
       }
     }
+
   </style>
   <script src="https://kit.fontawesome.com/a81368914c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <nav aria-label="Primary Navigation">
+
+  <!-- NAVIGATION -->
+  <nav aria-label="Primary navigation">
     <ul>
       <li class="nav-item active"><a href="#about">About</a></li>
       <li class="nav-item"><a href="#skills">Skills</a></li>
@@ -333,14 +339,15 @@
 
   <header>
     <h1>Hey, I’m Quynh Trang.</h1>
-    <img src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6" alt="Avatar" class="avatar" />
-    <a href="https://www.facebook.com/quynhhhhtrangg/" target="_blank" rel="noopener" class="about-link" aria-label="Facebook Profile">
+    <img class="avatar" alt="Quynh Trang avatar" src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6" />
+    <a href="https://www.facebook.com/quynhhhhtrangg/" target="_blank" rel="noopener" class="about-link" aria-label="Facebook profile link">
       <i class="fab fa-facebook-f"></i> About Me
     </a>
   </header>
 
   <main>
-    <section id="about">
+
+    <section id="about" tabindex="0">
       <h2>About Me</h2>
       <div class="about-content">
         <p>I'm Quynh Trang</p>
@@ -348,11 +355,11 @@
         <p>I aspire to build a career in digital content creation, particularly on social media platforms. In the short term, I am focused on developing my skills in ideation, content production, and trend analysis to create effective communication materials. In the long term, I aim to become a professional Content Creator who can contribute meaningfully to communication strategies and enhance brand value.</p>
         <p>Email: <a href="mailto:haanhh2204@gmail.com">haanhh2204@gmail.com</a></p>
         <p>Location: Cau Giay District, Hanoi</p>
-        <a href="https://drive.google.com/file/d/1FwC7Zq4mb0OA3i39Tr5IGceT605d6BVP/view?usp=sharing" target="_blank" rel="noopener" class="resume-btn" aria-label="View Resume">Resume</a>
+        <a href="https://drive.google.com/file/d/1FwC7Zq4mb0OA3i39Tr5IGceT605d6BVP/view?usp=sharing" target="_blank" rel="noopener" class="resume-btn" aria-label="Resume link">Resume</a>
       </div>
     </section>
 
-    <section id="skills">
+    <section id="skills" tabindex="0">
       <h2>Skills</h2>
       <ul>
         <li>Basic communication and negotiation skills with clients.</li>
@@ -364,7 +371,7 @@
       </ul>
     </section>
 
-    <section id="abilities">
+    <section id="abilities" tabindex="0">
       <h2>Abilities</h2>
       <p><strong>Electric Power University - Communications Department</strong></p>
       <ul>
@@ -375,26 +382,26 @@
       </ul>
     </section>
 
-    <section id="education">
+    <section id="education" tabindex="0">
       <h2>My Education</h2>
       <p>Education is not the learning of facts, but the training of the mind to think.</p>
       <p><strong>Electric Power University:</strong> 2021 - 2025</p>
       <p><strong>Major:</strong> Business Administration</p>
     </section>
 
-    <section id="projects">
+    <section id="projects" tabindex="0">
       <h2>Projects Made</h2>
       <div class="projects-grid" aria-label="Projects image gallery">
-        <img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/482088310_1346155926559466_4868602605006020842_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHoUuyd4Tx85HIqFso0-z9kOU_K9-42i3k5T8r37jaLeWkNHTSLJnPABQYiYEtnUNxShD2_OTX6t2pwtomssn5r&_nc_ohc=qZuymqmTrL4Q7kNvwHCfSCH&_nc_oc=AdnEn3m01dMJAjCv2kNGGnBPIxc271hOoH4WW7DEoTXO0k03aWQYyZj5r2NEnH_Y_i4&_nc_zt=23&_nc_ht=scontent.fhan5-10.fna&_nc_gid=4uTXVvgr5CUv0S40uEyffw&oh=00_AfIn9jqqHmJexL3bneIUM7k4XltrqMe4qRGiehkgnY1O8g&oe=682D4CBD" alt="Project 1" />
-        <img src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/481273044_1344179780090414_7716386280898752817_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEZRCQtQrnePwsrX3krMQeeH26hkVrE1EAfbqGRWsTUQPM87DhDHpus636RLxmuyLyk6HSOSX7w_9pnvQGI3CRI&_nc_ohc=Pb7qZqqVriwQ7kNvwFM35rj&_nc_oc=AdmcUfGgVBHCtXWtq5Ah9pC40L5pC0TC06yXof1WkwnYjfn18w-VJtxqFhJYNGGTQyQ&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=zUZ72BWW3mMiU2ETI78MWw&oh=00_AfIpkPA0Rg2Ika5Km0C-V3sIqkzx0JhUEvNtV1-g2964sg&oe=682D3DB1" alt="Project 2" />
-        <img src="https://scontent.fhan5-2.fna.fbcdn.net/v/t39.30808-6/493306957_1226845886112309_8852092623907302968_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFp8GlF9RKmNf2I7xYjZejxD0-BdId6IP8PT4F0h3og_98iNaomsa2gvRzb1gjxA4lvb2qVP1kEi4zoj2Frdx_Y&_nc_ohc=WBmAi_62D2YQ7kNvwHeJtlA&_nc_oc=AdkinzFrzWTcnaHhyJ0Yc5-cs62QzMNuyyt8lvI3zGH98sPjheIwqtd2l3XmuBtqfDE&_nc_zt=23&_nc_ht=scontent.fhan5-2.fna&_nc_gid=9b7fIFWI1Gupsl00zbSJ4w&oh=00_AfJ9QI-WPLPH2r3gzWu0lUQI_6fEIIBdXrpLBaO2tj2cCQ&oe=682D732F" alt="Project 3" />
-        <img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/480773442_611049221556581_2441526556231819358_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEDJcVKOk_-NuV4OaiMfH_m_M_Ma5d40Vr8z8xrl3jRWoAiZ66cQJkoRv5ws_SoxFEXkWdjNVmsueDBI_vCSzlg&_nc_ohc=ul4EeTzbV38Q7kNvwFzmEJI&_nc_oc=Adm5-24EvGnfpOuzIa_N_1WqUNLb3JkgzY-c9jgVBdXw1CLc3JKJle1SuL8pkrQ6-3A&_nc_zt=23&_nc_ht=scontent.fhan5-10.fna&_nc_gid=JQRs65BOO6ShbfntB_fQQg&oh=00_AfLktLGguwj5Oj68YsGJTFLkUjpVoTKy56CH80Ml47F4UA&oe=682D4CE0" alt="Project 4" />
-        <img src="https://scontent.fhan5-6.fna.fbcdn.net/v/t39.30808-6/475974387_596109389717231_400819418207116640_n.jpg?stp=cp6_dst-jpg_s640x640_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHGzBPV1hElfiN9H32e3NaFSKUxXbjErutIpTFduMSu67g_V7-hYfcKObi2lT8kvR9SsDrk5EniJLl0dxloZFLd&_nc_ohc=1fAkn99PJ-YQ7kNvwE0i2B8&_nc_oc=Adno0EArsbNTtgubLKXWw8vv88-AtVDSbLy8g_akIaDBPQimxgPtIYn5Y6hcjkUdyEw&_nc_zt=23&_nc_ht=scontent.fhan5-6.fna&_nc_gid=8gCSULEaDA1LHtU1jgs10Q&oh=00_AfJUUO18FCu5Ue_yyIfPy9ML_S28GKzGogwxIVscNcpImw&oe=682D6654" alt="Project 5" />
-        <img src="https://scontent.fhan5-8.fna.fbcdn.net/v/t39.30808-6/474552883_589649297029907_5752310149884590396_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEQ2RPSdFJZl5Wb3YawiuGFYHpc_rnJ-V5gelz-ucn5XpcYdhByfu6rLSUkGC8CbUElrVi3tKrCdJKgb8_RhZw5&_nc_ohc=dVvypa-Ms3cQ7kNvwHqq3-b&_nc_oc=AdlcU1SeiEjpyFJATZOn_osFHcNRIawFghePgDX4MuNlCirSPvnu5yspKV7YPRamIdE&_nc_zt=23&_nc_ht=scontent.fhan5-8.fna&_nc_gid=jHZ9sapKMCIAbqC-GqYlCQ&oh=00_AfLCmYqr6TqlwC8j-3LR0nw9aqU7AjOyWVmvn5NUpoB-Vw&oe=682D5740" alt="Project 6" />
+        <img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/482088310_1346155926559466_4868602605006020842_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHoUuyd4Tx85HIqFso0-z9kOU_K9-42i3k5T8r37jaLeWkNHTSLJnPABQYiYEtnUNxShD2_OTX6t2pwtomssn5r&_nc_ohc=qZuymqmTrL4Q7kNvwHCfSCH&_nc_oc=AdnEn3m01dMJAjCv2kNGGnBPIxc271hOoH4WW7DEoTXO0k03aWQYyZj5r2NEnH_Y_i4&_nc_zt=23&_nc_ht=scontent.fhan5-10.fna&_nc_gid=4uTXVvgr5CUv0S40uEyffw&oh=00_AfIn9jqqHmJexL3bneIUM7k4XltrqMe4qRGiehkgnY1O8g&oe=682D4CBD" alt="Project 1 image"/>
+        <img src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/481273044_1344179780090414_7716386280898752817_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEZRCQtQrnePwsrX3krMQeeH26hkVrE1EAfbqGRWsTUQPM87DhDHpus636RLxmuyLyk6HSOSX7w_9pnvQGI3CRI&_nc_ohc=Pb7qZqqVriwQ7kNvwFM35rj&_nc_oc=AdmcUfGgVBHCtXWtq5Ah9pC40L5pC0TC06yXof1WkwnYjfn18w-VJtxqFhJYNGGTQyQ&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=zUZ72BWW3mMiU2ETI78MWw&oh=00_AfIpkPA0Rg2Ika5Km0C-V3sIqkzx0JhUEvNtV1-g2964sg&oe=682D3DB1" alt="Project 2 image"/>
+        <img src="https://scontent.fhan5-2.fna.fbcdn.net/v/t39.30808-6/493306957_1226845886112309_8852092623907302968_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFp8GlF9RKmNf2I7xYjZejxD0-BdId6IP8PT4F0h3og_98iNaomsa2gvRzb1gjxA4lvb2qVP1kEi4zoj2Frdx_Y&_nc_ohc=WBmAi_62D2YQ7kNvwHeJtlA&_nc_oc=AdkinzFrzWTcnaHhyJ0Yc5-cs62QzMNuyyt8lvI3zGH98sPjheIwqtd2l3XmuBtqfDE&_nc_zt=23&_nc_ht=scontent.fhan5-2.fna&_nc_gid=9b7fIFWI1Gupsl00zbSJ4w&oh=00_AfJ9QI-WPLPH2r3gzWu0lUQI_6fEIIBdXrpLBaO2tj2cCQ&oe=682D732F" alt="Project 3 image"/>
+        <img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/480773442_611049221556581_2441526556231819358_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEDJcVKOk_-NuV4OaiMfH_m_M_Ma5d40Vr8z8xrl3jRWoAiZ66cQJkoRv5ws_SoxFEXkWdjNVmsueDBI_vCSzlg&_nc_ohc=ul4EeTzbV38Q7kNvwFzmEJI&_nc_oc=Adm5-24EvGnfpOuzIa_N_1WqUNLb3JkgzY-c9jgVBdXw1CLc3JKJle1SuL8pkrQ6-3A&_nc_zt=23&_nc_ht=scontent.fhan5-10.fna&_nc_gid=JQRs65BOO6ShbfntB_fQQg&oh=00_AfLktLGguwj5Oj68YsGJTFLkUjpVoTKy56CH80Ml47F4UA&oe=682D4CE0" alt="Project 4 image"/>
+        <img src="https://scontent.fhan5-6.fna.fbcdn.net/v/t39.30808-6/475974387_596109389717231_400819418207116640_n.jpg?stp=cp6_dst-jpg_s640x640_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHGzBPV1hElfiN9H32e3NaFSKUxXbjErutIpTFduMSu67g_V7-hYfcKObi2lT8kvR9SsDrk5EniJLl0dxloZFLd&_nc_ohc=1fAkn99PJ-YQ7kNvwE0i2B8&_nc_oc=Adno0EArsbNTtgubLKXWw8vv88-AtVDSbLy8g_akIaDBPQimxgPtIYn5Y6hcjkUdyEw&_nc_zt=23&_nc_ht=scontent.fhan5-6.fna&_nc_gid=8gCSULEaDA1LHtU1jgs10Q&oh=00_AfJUUO18FCu5Ue_yyIfPy9ML_S28GKzGogwxIVscNcpImw&oe=682D6654" alt="Project 5 image"/>
+        <img src="https://scontent.fhan5-8.fna.fbcdn.net/v/t39.30808-6/474552883_589649297029907_5752310149884590396_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEQ2RPSdFJZl5Wb3YawiuGFYHpc_rnJ-V5gelz-ucn5XpcYdhByfu6rLSUkGC8CbUElrVi3tKrCdJKgb8_RhZw5&_nc_ohc=dVvypa-Ms3cQ7kNvwHqq3-b&_nc_oc=AdlcU1SeiEjpyFJATZOn_osFHcNRIawFghePgDX4MuNlCirSPvnu5yspKV7YPRamIdE&_nc_zt=23&_nc_ht=scontent.fhan5-8.fna&_nc_gid=jHZ9sapKMCIAbqC-GqYlCQ&oh=00_AfLCmYqr6TqlwC8j-3LR0nw9aqU7AjOyWVmvn5NUpoB-Vw&oe=682D5740" alt="Project 6 image"/>
       </div>
     </section>
 
-    <section id="experience">
+    <section id="experience" tabindex="0">
       <h2>Experience</h2>
       <article class="experience-item">
         <h3>Intalent Vietnam - Internal Communications</h3>
@@ -421,39 +428,43 @@
       </article>
     </section>
 
-    <section id="contact">
+    <section id="contact" tabindex="0">
       <h2>Contact</h2>
       <p>Thank you for visiting my personal portfolio website. Connect with me over socials.</p>
       <div class="contact-info">
-        <div class="contact-item"><i class="fas fa-phone-alt"></i> 0363036002</div>
-        <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:haanhh2204@gmail.com">haanhh2204@gmail.com</a></div>
+        <div class="contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i> 0363036002</div>
+        <div class="contact-item"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:haanhh2204@gmail.com">haanhh2204@gmail.com</a></div>
       </div>
     </section>
+
   </main>
+
   <script>
-    // Highlight nav item on scroll:
+    // Highlight nav item on scroll
     const sections = document.querySelectorAll('section');
-    const navLi = document.querySelectorAll('nav ul li');
+    const navItems = document.querySelectorAll('nav ul li');
 
     window.addEventListener('scroll', () => {
-      let current = '';
+      let currentSectionId = '';
       const scrollY = window.pageYOffset;
 
       sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
+        const sectionTop = section.offsetTop - 80;
         if(scrollY >= sectionTop){
-          current = section.getAttribute('id');
+          currentSectionId = section.getAttribute('id');
         }
       });
 
-      navLi.forEach(li => {
-        li.classList.remove('active');
-        if(li.querySelector('a').getAttribute('href') === '#' + current){
-          li.classList.add('active');
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        const anchor = item.querySelector('a').getAttribute('href').substring(1);
+        if(anchor === currentSectionId){
+          item.classList.add('active');
         }
       });
     });
   </script>
+
 </body>
 </html>
 
