@@ -1,197 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Quynh Trang Portfolio</title>
-  <style>
-    /* Reset and base */
-    * {
-      box-sizing: border-box;
-    }
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      scroll-behavior: smooth;
-      background: url('https://png.pngtree.com/thumb_back/fh260/background/20250228/pngtree-a-photograph-of-beautiful-sky-at-dusk-with-soft-pink-and-image_17029677.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #333;
-      height: 100%;
-    }
-    /* Nav Bar */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.9);
-      display: flex;
-      justify-content: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 1000;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      padding: 0;
-      margin: 0;
-    }
-    nav li {
-      margin: 0 20px;
-    }
-    nav a {
-      display: block;
-      padding: 20px 10px;
-      text-decoration: none;
-      font-weight: 600;
-      color: #333;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      transition: color 0.3s ease;
-    }
-    nav a:hover, nav a.active {
-      color: #e91e63;
-      border-bottom: 3px solid #e91e63;
-    }
-    /* Section styles */
-    section {
-      min-height: 100vh;
-      padding: 120px 40px 60px;
-      background: rgba(255, 255, 255, 0.8);
-      max-width: 900px;
-      margin: 0 auto 40px auto;
-      border-radius: 8px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    }
-    h1, h2 {
-      margin-bottom: 16px;
-      color: #222;
-    }
-    p, ul {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #444;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #fff;
-      background: rgba(0,0,0,0.5);
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-      left: 0;
-    }
-    /* Responsive */
-    @media (max-width: 600px) {
-      nav li {
-        margin: 0 10px;
-      }
-      section {
-        padding: 100px 20px 40px;
-        margin: 0 10px 30px;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quynh Trang Portfolio</title>
+<style>
+  /* Reset & base */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  body {
+    background: #121212;
+    color: #eee;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    background: #1f1f1f;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+  header a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  header a:hover {
+    color: #1db954; /* nice green */
+  }
+
+  main {
+    flex: 1;
+    padding: 3rem 2rem;
+  }
+
+  section {
+    display: none;
+  }
+  section.active {
+    display: block;
+  }
+
+  /* Home */
+  #home h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #1db954;
+  }
+  #home p {
+    font-size: 1.3rem;
+    color: #ccc;
+  }
+
+  /* About Me */
+  #about {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #about img.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #1db954;
+    margin-bottom: 1.5rem;
+  }
+  #about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1db954;
+  }
+  #about p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #ccc;
+  }
+  #about .social-links a {
+    display: inline-block;
+    margin: 0 0.8rem;
+    color: #eee;
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
+  }
+  #about .social-links a:hover {
+    color: #1877f2; /* facebook blue */
+  }
+  /* Facebook icon SVG */
+  #about .social-links svg {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    fill: currentColor;
+  }
+</style>
 </head>
 <body>
 
-<nav>
-  <ul>
-    <li><a href="#things-i-do" class="active">Things I Do</a></li>
-    <li><a href="#about-me">About Me</a></li>
-    <li><a href="#reference">Reference</a></li>
-  </ul>
-</nav>
+<header>
+  <a href="#" data-target="home" class="nav-link active">Home</a>
+  <a href="#" data-target="about" class="nav-link">About Me</a>
+</header>
 
-<section id="things-i-do">
-  <h1>Hey, I'm Quynh Trang</h1>
-  <h2>Contact</h2>
-  <p>Content Creator</p>
-  <p>Phone: 0363036002</p>
-  <p>Email: haanhh2204@gmail.com</p>
-  <p>Location: Cau Giay, Hanoi</p>
+<main>
+  <section id="home" class="active">
+    <h1>Xin chào, tôi là Quynh Trang</h1>
+    <p>Welcome to my personal portfolio!</p>
+  </section>
 
-  <h2>Skills</h2>
-  <ul>
-    <li>Basic communication and negotiation with clients</li>
-    <li>Proficient with basic office tools</li>
-    <li>Writing and diverse content creation skills</li>
-    <li>Teamwork and cross-department collaboration skills</li>
-    <li>Flexible problem solving and adaptability</li>
-    <li>Proficient in design and editing tools: Canva, Capcut, etc.</li>
-  </ul>
-</section>
-
-<section id="about-me">
-  <h2>Career Objective</h2>
-  <p>I aim to develop my career in digital content creation, especially on social media platforms. In the short term, I focus on honing skills in idea development, content production, and trend catching to create effective media products. In the long term, I aspire to become a professional Content Creator, contributing to communication strategies and increasing brand value.</p>
-
-  <h2>Education</h2>
-  <p>Electric Power University: 2021-2025</p>
-  <p>Major: Business Administration</p>
-</section>
-
-<section id="reference">
-  <h2>Work Experience</h2>
-  <h3>02/2023 - 10/2023: Intalent Vietnam</h3>
-  <p><strong>Internal Communications</strong></p>
-  <ul>
-    <li>Managed and created content for the company page, attracting 500+ organic likes & followers.</li>
-    <li>Designed materials for important internal events.</li>
-    <li>Collaborated on email marketing campaigns to improve engagement and brand awareness.</li>
-    <li>Planned periodic content production and wrote articles for website and social media channels (Fanpage, LinkedIn, etc.).</li>
-    <li>Participated in content creation and proposed strategies for communication and marketing projects.</li>
-  </ul>
-
-  <h3>10/2023 - 03/2025: Human Solutions Vietnam</h3>
-  <p><strong>Content Creator</strong></p>
-  <ul>
-    <li>Planned content creation and coordinated with Marketing team to implement ideas.</li>
-    <li>Wrote and managed content (articles, images) for company social media platforms.</li>
-    <li>Kept up-to-date with new trends on TikTok and proposed brand-appropriate ideas.</li>
-    <li>Seeding content in Facebook groups.</li>
-    <li>Monitored channel updates and reported weekly results.</li>
-    <li>Collaborated with team for photoshoots and video recordings.</li>
-  </ul>
-
-  <h2>Activities</h2>
-  <h3>Electric Power University - Communications Team</h3>
-  <ul>
-    <li>Conceptualized and supported events such as galas and school anniversary celebrations.</li>
-    <li>Managed the club's Fanpage, increasing interaction and attracting students.</li>
-    <li>Planned, coordinated, and communicated events like Student Festival, seminars, and cultural programs.</li>
-    <li>Worked with teams on internal communication campaigns to spread messages and connect students.</li>
-  </ul>
-</section>
-
-<footer>
-  &copy; 2025 Quynh Trang
-</footer>
+  <section id="about">
+    <img
+      class="avatar"
+      src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf_&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6"
+      alt="Quynh Trang"
+    />
+    <h2>About Me</h2>
+    <p>Content Creator passionate about digital media and storytelling.</p>
+    <div class="social-links">
+      <a href="https://www.facebook.com/quynhhhhtrangg/" target="_blank" aria-label="Facebook">
+        <!-- Facebook SVG Icon -->
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.466.099 2.797.143v3.243l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.312h3.588l-.467 3.622h-3.12V24h6.116c.73 0 1.326-.597 1.326-1.326V1.326C24 .597 23.403 0 22.675 0z"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+</main>
 
 <script>
-  // Highlight active nav link on scroll
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll("nav a");
+  // Navigation link switching
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('main section');
 
-  window.addEventListener("scroll", () => {
-    let current = "";
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 100;
-      if (pageYOffset >= sectionTop) {
-        current = section.getAttribute("id");
-      }
-    });
-    navLinks.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === "#" + current) {
-        link.classList.add("active");
-      }
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('data-target');
+
+      // Toggle active on nav links
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+
+      // Show target section only
+      sections.forEach(sec => {
+        sec.id === targetId ? sec.classList.add('active') : sec.classList.remove('active');
+      });
     });
   });
 </script>
