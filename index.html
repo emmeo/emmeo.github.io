@@ -1,299 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Quynh Trang Portfolio</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
-  body {
-    margin: 0; 
-    background: #121212;
-    color: #eee;
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
-  }
-  a {
-    color: #59bfff;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-
-  /* Navbar */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: #111;
-    padding: 12px 30px;
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
-    z-index: 1000;
-  }
-  nav button {
-    background: transparent;
-    border: 2px solid #59bfff;
-    color: #59bfff;
-    padding: 6px 14px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 16px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  nav button:hover {
-    background: #59bfff;
-    color: #111;
-  }
-
-  /* Sections container */
-  main {
-    max-width: 900px;
-    margin: 80px auto 80px;
-    padding: 0 20px;
-  }
-
-  /* Home Section */
-  #home {
-    text-align: center;
-    margin-top: 40px;
-  }
-  #home .avatar {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    border: 3px solid #59bfff;
-    object-fit: cover;
-    margin: 20px auto;
-    display: block;
-    box-shadow: 0 0 15px #59bfff44;
-  }
-  #home h1 {
-    font-weight: 600;
-    font-size: 2.8rem;
-    margin: 0;
-  }
-  #home h1 span {
-    color: #59bfff;
-  }
-  #home .about-link {
-    margin-top: 18px;
-    display: inline-block;
-    cursor: pointer;
-    font-weight: 600;
-    color: #59bfff;
-    border: 2px solid #59bfff;
-    padding: 10px 20px;
-    border-radius: 25px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  #home .about-link:hover {
-    background-color: #59bfff;
-    color: #121212;
-  }
-  #home .social-icons {
-    margin-top: 30px;
-  }
-  #home .social-icons a {
-    color: #59bfff;
-    margin: 0 10px;
-    font-size: 28px;
-    display: inline-block;
-    transition: transform 0.3s ease;
-  }
-  #home .social-icons a:hover {
-    transform: scale(1.2);
-  }
-
-  /* About Section */
-  #about {
-    margin-top: 50px;
-    line-height: 1.6;
-  }
-  #about h2 {
-    font-weight: 600;
-    font-size: 2rem;
-    margin-bottom: 12px;
-    border-left: 4px solid #59bfff;
-    padding-left: 12px;
-  }
-  #about p {
-    margin-bottom: 18px;
-  }
-  #about .resume-btn {
-    display: inline-block;
-    margin-top: 10px;
-    border: 2px solid #59bfff;
-    color: #59bfff;
-    padding: 8px 20px;
-    border-radius: 25px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-decoration: none;
-  }
-  #about .resume-btn:hover {
-    background-color: #59bfff;
-    color: #121212;
-  }
-
-  /* Skills and Abilities */
-  section.skills, section.abilities, section.education, section.projects {
-    margin-top: 60px;
-  }
-  section h2 {
-    font-weight: 600;
-    font-size: 2rem;
-    border-left: 4px solid #59bfff;
-    padding-left: 12px;
-    margin-bottom: 20px;
-  }
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  ul li::before {
-    content: "▹";
-    color: #59bfff;
-    margin-right: 8px;
-  }
-  ul li {
-    margin-bottom: 10px;
-    font-weight: 300;
-    font-size: 1.05rem;
-  }
-
-  /* Education */
-  #education p {
-    font-style: italic;
-    margin-bottom: 10px;
-  }
-  #education strong {
-    font-weight: 600;
-  }
-
-  /* Projects */
-  #projects .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
-    gap: 20px;
-  }
-  #projects img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 0 10px #59bfff44;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-  }
-  #projects img:hover {
-    transform: scale(1.05);
-  }
-
-  /* Fade in animation */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(15px);
-    animation-fill-mode: forwards;
-    animation-name: fadeInUp;
-    animation-duration: 0.6s;
-    animation-timing-function: ease-out;
-  }
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
-<!-- FontAwesome for Facebook icon -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quynh Trang - Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        header img.avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #007bff;
+        }
+        h1 {
+            margin: 10px 0 5px;
+            font-weight: 700;
+        }
+        h2 {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+        .about-me {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .social-icons a {
+            margin: 0 8px;
+            display: inline-block;
+            color: #3b5998;
+            text-decoration: none;
+            font-size: 28px;
+            vertical-align: middle;
+        }
+        .social-icons a:hover {
+            color: #2d4373;
+        }
+        button.resume-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        button.resume-btn:hover {
+            background-color: #0056b3;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        ul.skills-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul.skills-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        ul.skills-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #007bff;
+        }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        .projects img {
+            width: 280px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 0 6px rgb(0 0 0 / 0.1);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .projects img:hover {
+            transform: scale(1.05);
+        }
+        .experience p {
+            margin-bottom: 5px;
+        }
+        .experience ul {
+            margin-top: 5px;
+        }
+        .experience ul li {
+            margin-bottom: 4px;
+        }
+    </style>
+    <!-- Font Awesome CDN for Facebook icon -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-papbXvIh7I5ndyRpqzN3gFQmjF6A4sy0KU24+bQ5i35vEhW8JuW01wfpLnqN0fZpMxSGL4q6RtkEsmF0hztmHg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
 </head>
 <body>
 
-<nav>
-  <button onclick="scrollToSection('home')">Home</button>
-  <button onclick="scrollToSection('about')">About Me</button>
-  <button onclick="scrollToSection('skills')">Skills</button>
-  <button onclick="scrollToSection('abilities')">Abilities</button>
-  <button onclick="scrollToSection('education')">Education</button>
-  <button onclick="scrollToSection('projects')">Projects Made</button>
-</nav>
+<header>
+    <img class="avatar" src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf_&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6" alt="Quynh Trang Avatar" />
+    <h1>Hey, I’m Quynh Trang.</h1>
 
-<main>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/quynhhhhtrangg/" target="_blank" title="Facebook">
+            <i class="fab fa-facebook-square"></i>
+        </a>
+    </div>
+</header>
 
-<section id="home" class="fade-in" style="animation-delay: 0.1s;">
-  <h1>Hey, I’m <span>Quynh Trang.</span></h1>
-  <img
-    src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf_&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6"
-    alt="Avatar"
-    class="avatar"
-  />
-  <div class="about-link" onclick="scrollToSection('about')">About Me</div>
-  <div class="social-icons" style="margin-top:25px;">
-    <a href="https://www.facebook.com/quynhhhhtrangg/" target="_blank" aria-label="Facebook">
-      <i class="fab fa-facebook-square"></i>
+<section class="about-me">
+    <h2>About Me</h2>
+    <p>
+        I'm Quynh Trang<br />
+        Content Creator<br /><br />
+        I aspire to build a career in digital content creation, particularly on social media platforms. In the short term, I am focused on developing my skills in ideation, content production, and trend analysis to create effective communication materials. In the long term, I aim to become a professional Content Creator who can contribute meaningfully to communication strategies and enhance brand value.
+    </p>
+    <p>Email: <a href="mailto:haanhh2204@gmail.com">haanhh2204@gmail.com</a><br />
+       Location: Cau Giay District, Hanoi</p>
+
+    <a href="https://drive.google.com/file/d/1FwC7Zq4mb0OA3i39Tr5IGceT605d6BVP/view?usp=sharing" target="_blank" rel="noopener">
+        <button class="resume-btn">View Resume</button>
     </a>
-  </div>
 </section>
 
-<section id="about" class="fade-in" style="animation-delay: 0.3s;">
-  <h2>I'm Quynh Trang</h2>
-  <p>I'm a student at San Diego Mesa College in the Business Management Practice program. I'm passionate about communications and internal media. I enjoy working on projects related to media content and business planning.</p>
-  <p>I am always eager to learn new skills and take on challenges that help me grow both personally and professionally.</p>
-  <a href="https://drive.google.com/file/d/1nU_7YKqp8r54t-VXmq5x-ZDdpOIl6MYs/view?usp=sharing" target="_blank" rel="noopener" class="resume-btn">Resume</a>
+<section>
+    <h2>Skills</h2>
+    <ul class="skills-list">
+        <li>Basic communication and negotiation skills with clients.</li>
+        <li>Proficient in essential office software.</li>
+        <li>Strong writing skills and ability to create diverse content.</li>
+        <li>Effective teamwork and cross-departmental collaboration.</li>
+        <li>Adaptability and flexible problem-solving abilities.</li>
+        <li>Proficient in design and editing tools such as Canva and Capcut.</li>
+    </ul>
 </section>
 
-<section id="skills" class="skills fade-in" style="animation-delay: 0.5s;">
-  <h2>Skills</h2>
-  <ul>
-    <li>Event Organization</li>
-    <li>Teamwork</li>
-    <li>Customer Service</li>
-    <li>Drink Preparation</li>
-    <li>Effective Communication</li>
-    <li>Basic Graphic Design</li>
-  </ul>
+<section>
+    <h2>Abilities</h2>
+    <p><strong>Electric Power University</strong><br />
+    Communications Department</p>
+    <ul>
+        <li>Conceptualized and supported the implementation of galas and anniversary events related to the university.</li>
+        <li>Managed the club’s Fanpage to increase engagement and attract student participation.</li>
+        <li>Participated in planning, coordinating, and promoting events such as Student Day, seminars, and cultural programs.</li>
+        <li>Collaborated with the team to execute internal communication campaigns, spreading messages and fostering student connections.</li>
+    </ul>
 </section>
 
-<section id="abilities" class="abilities fade-in" style="animation-delay: 0.7s;">
-  <h2>Abilities</h2>
-  <ul>
-    <li>Strong organizational skills</li>
-    <li>Quick learner</li>
-    <li>Problem-solving</li>
-    <li>Adaptability to new environments</li>
-    <li>Multitasking under pressure</li>
-    <li>Collaboration and leadership</li>
-  </ul>
+<section>
+    <h2>My Education</h2>
+    <p><em>Education is not the learning of facts, but the training of the mind to think.</em></p>
+    <p><strong>Electric Power University:</strong> 2021 - 2025<br />
+       <strong>Major:</strong> Business Administration</p>
 </section>
 
-<section id="education" class="education fade-in" style="animation-delay: 0.9s;">
-  <h2>Education</h2>
-  <p><strong>San Diego Mesa College</strong> — Business Management Practice</p>
-  <p>January 2024 - Present</p>
+<section>
+    <h2>Projects Made</h2>
+    <div class="projects">
+        <img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/482088310_1346155926559466_4868602605006020842_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHoUuyd4Tx85HIqFso0-z9kOU_K9-42i3k5T8r37jaLeWkNHTSLJnPABQYiYEtnUNxShD2_OTX6t2pwtomssn5r&_nc_ohc=ZcQk9S6OYFYAX_XFfJO&_nc_ht=scontent.fhan5-10.fna&oh=00_AfC69w9u5s7QPhJc2rYegmOmdLqxdvMScNqf6ybXjjkiQA&oe=6831D9F0" alt="Project 1" />
+        <img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/482184840_1952164467960980_7039979869675919981_n.jpg?stp=dst-jpg_p526x296&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFGqUtaEKRa6n2yJRYzywzF_c4uXrAfhrzS0d3Az0LT1JpIUOdSvBk6-3O5PpgoMLLtqzA38MavGqcl_y1NNwJ1&_nc_ohc=fhANF_Lv2vYAX-mWcEX&_nc_ht=scontent.fhan5-10.fna&oh=00_AfCCVRdyE-f67spY1pX6d9fzRDaxIx7v9rs0rQleD7G2vQ&oe=6832A772" alt="Project 2" />
+        <img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/482190191_1231311211690865_4340180646278167587_n.jpg?stp=dst-jpg_p526x296&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHc1OYZrRSx3r6vFQOPu9V1bNyELgXshwpMxShsD2ojK-OSu0nDf9aXtK8IDg_a7lYk-3Hk73mnPjo1lhlRkdHg&_nc_ohc=vnS2wHP_6C4AX-Vu7y6&_nc_ht=scontent.fhan5-10.fna&oh=00_AfBOzBy7n_6fDUQjPOQWSCZufb0o_wKg6Ks6j3t5uMMlbg&oe=6832A4CF" alt="Project 3" />
+    </div>
 </section>
 
-<section id="projects" class="projects fade-in" style="animation-delay: 1.1s;">
-  <h2>Projects Made</h2>
-  <div class="project-grid">
-    <img src="https://i.imgur.com/4zYzMKL.jpg" alt="Project 1: Business Plan" title="Business Plan Project" />
-    <img src="https://i.imgur.com/FnyKcRf.jpg" alt="Project 2: Event Promotion" title="Event Promotion Project" />
-    <img src="https://i.imgur.com/Wy4Dl2B.jpg" alt="Project 3: Media Content" title="Media Content Project" />
-  </div>
+<section class="experience">
+    <h2>Experience</h2>
+    <p><strong>Current:</strong> Content Creator at Electric Power University Communications Club</p>
+    <ul>
+        <li>Created multimedia content for Facebook and other social media channels.</li>
+        <li>Coordinated with teams for event promotion and audience engagement.</li>
+    </ul>
 </section>
-
-</main>
-
-<script>
-  function scrollToSection(id) {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
-</script>
 
 </body>
 </html>
