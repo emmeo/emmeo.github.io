@@ -1,411 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="jigar sable, portfolio, jigar, full stack dev, personal portfolio lifecodes, portfolio design, portfolio website, personal portfolio" />
-    <meta name="description" content="Welcome to Jigar's Portfolio. Full-Stack Web Developer and Android App Developer" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Favicon -->
-    <link id='favicon' rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-png">
-    <title>Portfolio | Jigar Sable</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quynh Trang Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background: #004aad;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      color: white;
+      margin: 0 0.7rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      border-bottom: 2px solid #004aad;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+      color: #004aad;
+    }
+    /* Home section */
+    #home {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    /* About Me */
+    #about-me {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    #about-me img.avatar {
+      border-radius: 50%;
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border: 4px solid #004aad;
+      flex-shrink: 0;
+    }
+    #about-me .about-text {
+      flex: 1;
+      min-width: 280px;
+    }
+    #about-me .about-text p {
+      line-height: 1.6;
+    }
+    /* Facebook icon link */
+    .facebook-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.7rem 0;
+      text-decoration: none;
+      color: #1877f2;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .facebook-link svg {
+      width: 24px;
+      height: 24px;
+      fill: #1877f2;
+      transition: fill 0.3s;
+    }
+    .facebook-link:hover svg {
+      fill: #0f4ab8;
+    }
+    /* Resume button */
+    .resume-btn {
+      background-color: #004aad;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-top: 1rem;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .resume-btn:hover {
+      background-color: #00307d;
+    }
+    /* Lists */
+    ul.skills-list,
+    ul.abilities-list {
+      list-style: disc inside;
+      margin: 0;
+      padding-left: 1rem;
+    }
+    /* Projects images */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .projects-grid img {
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    /* Experience */
+    .experience-item {
+      margin-bottom: 1rem;
+    }
+    .experience-item h4 {
+      margin: 0;
+      font-weight: 700;
+      color: #004aad;
+    }
+    .experience-item ul {
+      margin-top: 0.3rem;
+      padding-left: 1.2rem;
+      list-style: disc;
+    }
+  </style>
 </head>
-<body oncontextmenu="return false">
+<body>
+  <header>
+    <h1>Hey, I’m Quynh Trang.</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about-me">About Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#abilities">Abilities</a>
+      <a href="#education">My Education</a>
+      <a href="#projects">Projects Made</a>
+      <a href="#experience">Experience</a>
+    </nav>
+  </header>
 
-<!-- pre loader -->
-<!-- <div class="loader-container">
-  <img draggable="false" src="./assets/images/preloader.gif" alt="">
-</div> -->
+  <main>
+    <section id="home">
+      <p>Welcome to my personal portfolio website!</p>
+    </section>
 
-<!-- navbar starts -->
-<header>
-        <a href="/" class="logo"><i class="fab fa-node-js"></i> Jigar</a>
+    <section id="about-me">
+      <img 
+        src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf_&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6" 
+        alt="Quynh Trang avatar" 
+        class="avatar" 
+      />
+      <div class="about-text">
+        <h2>I'm Quynh Trang</h2>
+        <p>Content Creator</p>
+        <p>
+          I aspire to build a career in digital content creation, particularly on social media platforms. In the short term, I am focused on developing my skills in ideation, content production, and trend analysis to create effective communication materials. In the long term, I aim to become a professional Content Creator who can contribute meaningfully to communication strategies and enhance brand value.
+        </p>
+        <p><strong>Email:</strong> haanhh2204@gmail.com</p>
+        <p><strong>Location:</strong> Cau Giay District, Hanoi</p>
 
-        <div id="menu" class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-</header>
-<!-- navbar ends -->
+        <a href="file:///C:/Users/HP/Downloads/Pham-Quynh-Trang-TopCV.vn-170525.21809.pdf" target="_blank" class="resume-btn">View Resume</a>
 
-
-<!-- hero section starts -->
-<section class="home" id="home">
-    <div id="particles-js"></div>
-
-    <div class="content">
-    <h2>Hi There,<br/> I'm Jigar <span>Sable</span></h2>
-    <p>i am into <span class="typing-text"></span></p>
-    <a href="#about" class="btn"><span>About Me</span>
-      <i class="fas fa-arrow-circle-down"></i>
-    </a>
-    <div class="socials">
-        <ul class="social-icons">
-          <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/jigar-sable/" target="_blank"><i class="fab fa-linkedin"></i></a></li> 
-          <li><a class="github" aria-label="GitHub" href="https://github.com/jigar-sable" target="_blank"><i class="fab fa-github"></i></a></li>
-          <li><a class="twitter" aria-label="Twitter" href="https://twitter.com/jigar_sable" target="_blank"><i class="fab fa-twitter"></i></a></li>
-          <li><a class="telegram" aria-label="Telegram" href="https://t.me/lifecode5" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
-          <li><a class="instagram" aria-label="Instagram" href="https://www.instagram.com/jigarsable.dev"><i class="fab fa-instagram" target="_blank"></i></a></li>
-          <li><a class="dev" aria-label="Dev" href="https://dev.to/jigarsable" target="_blank"><i class="fab fa-dev"></i></a></li>
-        </ul>
+        <br/>
+        <a href="https://www.facebook.com/quynhhhhtrangg/" target="_blank" class="facebook-link" aria-label="Facebook profile">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+            <path d="M22.675 0h-21.35C.594 0 0 .594 0 1.325v21.351C0 23.406.594 24 1.325 24H12.82v-9.294H9.692v-3.622h3.127V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.312h3.59l-.467 3.622h-3.123V24h6.116c.73 0 1.324-.594 1.324-1.324V1.325C24 .594 23.406 0 22.675 0z"/>
+          </svg>
+          Facebook
+        </a>
       </div>
-    </div>
-<div class="image">
-    <img draggable="false" class="tilt" src="./assets/images/hero.png" alt="">
-</div>
-</section>
-<!-- hero section ends -->
+    </section>
 
-
-<!-- about section starts -->
-<section class="about" id="about">
-    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
-    
-    <div class="row">
-
-    <div class="image">
-        <img draggable="false" class="tilt" src="./assets/images/profile2.jpg" alt="">
-    </div>
-    <div class="content">
-        <h3>I'm Jigar</h3>
-        <span class="tag">Full Stack Developer</span>
-        
-        <p>I am a Full-Stack developer based in Pune, India. 
-          I am an Information Technology undergraduate from SPPU.
-          I am very passionate about improving my coding skills & developing applications & websites.
-          I build WebApps and Websites using MERN Stack.
-          Working for myself to improve my skills.
-          Love to build Full-Stack clones. </p>
-        
-        <div class="box-container">
-            <!-- <div class="box">
-              <p><span> age: </span> 20</p>
-              <p><span> phone : </span> +91 XXX-XXX-XXXX</p>
-            </div> -->
-            <div class="box">
-              <p><span> email : </span> jigarsable21@gmail.com</p>
-              <p><span> place : </span> Pune, India - 412206</p>
-            </div>
-        </div>
-        
-        <div class="resumebtn">
-            <a href="https://drive.google.com/file/d/1rZiXl562q7aVyk1kJ2nO85YBAq8ixTiw/view" target="_blank" class="btn"><span>Resume</span>
-                <i class="fas fa-chevron-right"></i>
-            </a>
-        </div>
-
-    </div>
-    </div>
-</section>
-<!-- about section ends -->
-
-<!-- skills section starts -->
-<section class="skills" id="skills">
-
-    <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
-
-    <div class="container">
-          <div class="row" id="skillsContainer">
-
-            <!-- <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/color/48/000000/adobe-xd.png"/>
-                <span>AdobeXD</span>
-              </div>
-            </div> -->
-
-      </div>
-</div>
-</section>
-<!-- skills section ends -->
-
-
-<!-- education section starts -->
-<section class="education" id="education">
-
-  <h1 class="heading"><i class="fas fa-graduation-cap"></i> My <span>Education</span></h1>
-
-    <p class="qoute">Education is not the learning of facts, but the training of the mind to think.</p>
-
-    <div class="box-container">
-
-    <div class="box">
-        <div class="image">
-        <img draggable="false" src="./assets/images/educat/college.jpg" alt="">
-        </div>
-        <div class="content">
-        <h3>Bachelor of Engineering in Information Technology</h3>
-        <p>Zeal College of engineering and research | SPPU</p>
-        <h4>2020-2024 | Pursuing</h4>
-        </div>
-    </div>
-
-    <div class="box">
-      <div class="image">
-      <img draggable="false" src="./assets/images/educat/school.jpg" alt="">
-      </div>
-      <div class="content">
-      <h3>HSC Science | Informatic Practices</h3>
-      <p>Shri  L. G. Haria Multipurpose School | CBSE</p>
-      <h4>2018-2020 | Completed</h4>
-      </div>
-    </div>
-
-</div>
-</section>
-<!-- education section ends -->
-
-
-<!-- work project section starts -->
-<section class="work" id="work">
-
-  <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
-
-  <div class="box-container">
-
-    <!-- <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/portfolio1.PNG" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>Portfolio Website</h3>
-        </div>
-        <div class="desc">
-          <p>Personal portfolio website. Don't need much info about it, just scroll down. You're here only!</p>
-          <div class="btns">
-            <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="https://github.com/jigar-sable/Portfolio-Website" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-</div>
-
-<div class="viewall">
-  <a href="/projects" class="btn"><span>View All</span>
-    <i class="fas fa-arrow-right"></i>
-</a>
-</div>
-
-</section>
-<!-- work project section ends -->
-
-<!-- experience section starts -->
-<section class="experience" id="experience">
-
-  <h2 class="heading"><i class="fas fa-briefcase"></i> Experience </h2>
-
-  <div class="timeline">
-
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>Self Employed</h2>
-        </div>
-        <div class="desc">
-            <h3>Full Stack Developer</h3>
-            <p>Oct 2021 - present</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>Mapstreak Flyseas</h2>
-        </div>
-        <div class="desc">
-            <h3>Web Developer | Internship</h3>
-            <p>June 2021 - Dec 2021</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>The Spark Foundation</h2>
-        </div>
-        <div class="desc">
-            <h3>Website Developer | Internship</h3>
-            <p>May 2021 - June 2021</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>The Spark Foundation</h2>
-        </div>
-        <div class="desc">
-            <h3>Mobile Application Developer | Internship</h3>
-            <p>April 2021 - May 2021</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>Frshr Technologies</h2>
-        </div>
-        <div class="desc">
-            <h3>Wordpress Developer | Internship</h3>
-            <p>April 2021 - April 2021</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>WonderingBlog</h2>
-        </div>
-        <div class="desc">
-            <h3>Web Development & SEO | Internship</h3>
-            <p>March 2021 - April 2021</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="morebtn">
-    <a href="/experience" class="btn"><span>View All</span>
-      <i class="fas fa-arrow-right"></i>
-  </a>
-  </div>
-
-</div>
-
-</section>
-<!-- experience section ends -->
-
-<!-- contact section starts -->
-<section class="contact" id="contact">
-  
-  <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
-
-  <div class="container">
-    <div class="content">
-      <div class="image-box">
-        <img draggable="false" src="./assets/images/contact1.png" alt="">
-      </div>
-    <form id="contact-form">
-      
-      <div class="form-group">
-        <div class="field">
-          <input type="text" name="name" placeholder="Name" required>
-          <i class='fas fa-user'></i>
-        </div>
-        <div class="field">
-          <input type="text" name="email" placeholder="Email" required>
-          <i class='fas fa-envelope'></i>
-        </div>
-        <div class="field">
-          <input type="text" name="phone" placeholder="Phone">
-          <i class='fas fa-phone-alt'></i>
-        </div>
-        <div class="message">
-        <textarea placeholder="Message" name="message" required></textarea>
-        <i class="fas fa-comment-dots"></i>
-        </div>
-        </div>
-      <div class="button-area">
-        <button type="submit">
-          Submit <i class="fa fa-paper-plane"></i></button>
-      </div>
-    </form>
-  </div>
-  </div>
-</section>
-<!-- contact section ends -->
-
-
-<!-- footer section starts -->
-<section class="footer">
-
-  <div class="box-container">
-
-      <div class="box">
-          <h3>Jigar's Portfolio</h3>
-          <p>Thank you for visiting my personal portfolio website. Connect with me over socials. <br/> <br/> Keep Rising 🚀. Connect with me over live chat!</p>
-      </div>
-
-      <div class="box">
-          <h3>quick links</h3>
-          <a href="#home"><i class="fas fa-chevron-circle-right"></i> home</a>
-          <a href="#about"><i class="fas fa-chevron-circle-right"></i> about</a>
-          <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
-          <a href="#education"><i class="fas fa-chevron-circle-right"></i> education</a>
-          <a href="#work"><i class="fas fa-chevron-circle-right"></i> work</a>
-          <a href="#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
-      </div>
-
-      <div class="box">
-          <h3>contact info</h3>
-          <p> <i class="fas fa-phone"></i>+91 XXX-XXX-XXXX</p>
-          <p> <i class="fas fa-envelope"></i>jigarsable21@gmail.com</p>
-          <p> <i class="fas fa-map-marked-alt"></i>Pune, India-412206</p>
-          <div class="share">
-
-              <a href="https://www.linkedin.com/in/jigar-sable" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank"></a>
-              <a href="https://github.com/jigar-sable" class="fab fa-github" aria-label="GitHub" target="_blank"></a>
-              <a href="mailto:jigarsable21@gmail.com" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
-              <a href="https://twitter.com/jigar_sable" class="fab fa-twitter" aria-label="Twitter" target="_blank"></a>
-              <a href="https://t.me/lifecode5" class="fab fa-telegram-plane" aria-label="Telegram" target="_blank"></a>
-          </div>
-      </div>
-  </div>
-
-  <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/jigar-sable"> jigar sable</a></h1>
-
-</section>
-<!-- footer section ends -->
-
-
-<!-- scroll top btn -->
-<a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
-<!-- scroll back to top -->
-
-
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
-<!-- jquery cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- typed.js cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- particle.js links -->
-<script src="./assets/js/particles.min.js"></script>
-<script src="./assets/js/app.js"></script>
-
-<!-- vanilla tilt.js links -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- scroll reveal anim -->
-<script src="https://unpkg.com/scrollreveal"></script>
-
-<script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
-    ></script>
-
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
-
-<script src="./assets/js/script.js"></script>
-
-</body>
-</html>
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="
