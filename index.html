@@ -1,135 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quynh Trang Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    body {
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      color: #fff;
-      background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20250228/pngtree-a-photograph-of-beautiful-sky-at-dusk-with-soft-pink-and-image_17029677.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      animation: fadein 2s;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
     }
 
-    @keyframes fadein {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    body {
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: white;
     }
 
-    .container {
-      max-width: 900px;
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    section {
+      padding: 100px 20px;
+      max-width: 800px;
       margin: auto;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 15px;
     }
 
-    h1, h2 {
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid white;
+      padding-bottom: 0.5rem;
+    }
+
+    .center {
       text-align: center;
     }
 
     .avatar {
-      display: block;
-      margin: 20px auto;
       width: 150px;
+      height: 150px;
       border-radius: 50%;
-      border: 4px solid #fff;
-    }
-
-    .socials {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .socials a {
-      color: white;
-      font-size: 30px;
-      margin: 0 10px;
-      transition: color 0.3s;
-    }
-
-    .socials a:hover {
-      color: #ff9ed2;
-    }
-
-    .section {
-      margin-bottom: 30px;
+      border: 4px solid white;
+      object-fit: cover;
+      margin: 1rem auto;
     }
 
     ul {
-      padding-left: 20px;
+      list-style: disc;
+      margin-left: 2rem;
     }
 
-    button {
-      display: block;
-      margin: 0 auto;
+    a.button {
+      display: inline-block;
+      margin-top: 1rem;
       padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      background-color: #ff66a5;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
+      background: white;
+      color: #333;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
     }
 
-    button:hover {
-      background-color: #e05590;
+    .social-icons {
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      margin: 0 0.5rem;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    blockquote {
+      font-style: italic;
+      opacity: 0.8;
+      margin-bottom: 1rem;
     }
   </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Hello, I am Quynh Trang</h1>
-    <img class="avatar" src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=a5f93a&amp;_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf_&amp;_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&amp;_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&amp;_nc_zt=23&amp;_nc_ht=scontent.fhan5-9.fna&amp;_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&amp;oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&amp;oe=682D60F6" alt="Quynh Trang Avatar">
-    <div class="socials">
+
+  <header>
+    <h1>Quynh Trang</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#abilities">Abilities</a>
+      <a href="#education">Education</a>
+    </nav>
+  </header>
+
+  <section id="about" class="center">
+    <img class="avatar" src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf_&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6" alt="Avatar" />
+    <h2>Hello, I'm Quynh Trang</h2>
+    <p><strong>Content Creator</strong></p>
+    <p>I aspire to build a career in digital content creation, especially on social media platforms. In the short term, I focus on developing skills in ideation, content production, and trend capturing. In the long term, I aim to contribute to media strategy and brand value enhancement.</p>
+    <p><strong>Email:</strong> haanhh2204@gmail.com<br />
+    <strong>Address:</strong> Cau Giay, Hanoi</p>
+    <div class="social-icons">
       <a href="https://www.facebook.com/quynhhhhtrangg/" target="_blank"><i class="fab fa-facebook"></i></a>
     </div>
+    <a class="button" href="https://drive.google.com/file/d/1FwC7Zq4mb0OA3i39Tr5IGceT605d6BVP/view?usp=sharing" target="_blank">View Resume</a>
+  </section>
 
-    <div class="section">
-      <h2>About Me</h2>
-      <p><strong>I'm Quynh Trang</strong><br>
-      Content Creator</p>
-      <p>I aspire to develop my career in the field of digital content creation, especially on social media platforms. In the short term, I focus on improving my skills in ideation, content production, and trend capture to create effective communication products. In the long run, I aim to become a professional content creator, contributing to communication strategies and enhancing brand value.</p>
-      <p>Email: haanhh2204@gmail.com<br>
-      Address: Cau Giay, Hanoi</p>
-      <a href="https://drive.google.com/file/d/1FwC7Zq4mb0OA3i39Tr5IGceT605d6BVP/view?usp=sharing" target="_blank"><button>View Resume</button></a>
-    </div>
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Basic communication and negotiation with clients</li>
+      <li>Proficiency in basic office tools</li>
+      <li>Content writing and creative diversity</li>
+      <li>Teamwork and cross-functional collaboration</li>
+      <li>Adaptability and flexible problem-solving</li>
+      <li>Proficiency in design and editing tools: Canva, Capcut,...</li>
+    </ul>
+  </section>
 
-    <div class="section">
-      <h2>Skills</h2>
-      <ul>
-        <li>Basic communication and negotiation with clients.</li>
-        <li>Proficient in basic office tools.</li>
-        <li>Strong writing and content creation skills.</li>
-        <li>Teamwork and inter-departmental collaboration.</li>
-        <li>Adaptability and problem-solving.</li>
-        <li>Skilled in Canva, Capcut, and other editing tools.</li>
-      </ul>
-    </div>
+  <section id="abilities">
+    <h2>Abilities</h2>
+    <p><strong>Electric Power University - Media Team</strong></p>
+    <ul>
+      <li>Ideated and supported event execution such as galas and school anniversaries</li>
+      <li>Managed the club's Fanpage to increase engagement and attract student participation</li>
+      <li>Participated in planning, coordination, and communication for events like Student Day, seminars, and cultural shows</li>
+      <li>Collaborated on internal media campaigns to spread messages and connect students</li>
+    </ul>
+  </section>
 
-    <div class="section">
-      <h2>Abilities</h2>
-      <p><strong>Electric Power University – Media Department</strong></p>
-      <ul>
-        <li>Ideation and support for school-related galas and ceremonies.</li>
-        <li>Managing club Fanpage to boost engagement and attract student participation.</li>
-        <li>Planning, coordinating, and promoting events such as Student Festivals, specialized seminars, and art shows.</li>
-        <li>Collaborating on internal communication campaigns to spread messages and connect students.</li>
-      </ul>
-    </div>
+  <section id="education">
+    <h2>Education</h2>
+    <blockquote>"Education is not the learning of facts, but the training of the mind to think."</blockquote>
+    <p><strong>Electric Power University</strong> (2021 - 2025)<br />
+    Major: Business Administration</p>
+  </section>
 
-    <div class="section">
-      <h2>My Education</h2>
-      <p><em>"Education is not the learning of facts, but the training of the mind to think."</em></p>
-      <p><strong>Electric Power University (2021–2025)</strong><br>
-      Major: Business Administration</p>
-    </div>
-  </div>
 </body>
 </html>
