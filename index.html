@@ -1,198 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Quynh Trang - Portfolio</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-            background: #f8f9fa;
-            color: #333;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        header img.avatar {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #007bff;
-        }
-        h1 {
-            margin: 10px 0 5px;
-            font-weight: 700;
-        }
-        h2 {
-            color: #007bff;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 5px;
-        }
-        .about-me {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        .social-icons a {
-            margin: 0 8px;
-            display: inline-block;
-            color: #3b5998;
-            text-decoration: none;
-            font-size: 28px;
-            vertical-align: middle;
-        }
-        .social-icons a:hover {
-            color: #2d4373;
-        }
-        button.resume-btn {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 18px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 15px;
-            transition: background-color 0.3s ease;
-        }
-        button.resume-btn:hover {
-            background-color: #0056b3;
-        }
-        section {
-            margin-bottom: 30px;
-        }
-        ul.skills-list {
-            list-style: none;
-            padding-left: 0;
-        }
-        ul.skills-list li {
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-        }
-        ul.skills-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #007bff;
-        }
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-        }
-        .projects img {
-            width: 280px;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 0 6px rgb(0 0 0 / 0.1);
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-        .projects img:hover {
-            transform: scale(1.05);
-        }
-        .experience p {
-            margin-bottom: 5px;
-        }
-        .experience ul {
-            margin-top: 5px;
-        }
-        .experience ul li {
-            margin-bottom: 4px;
-        }
-    </style>
-    <!-- Font Awesome CDN for Facebook icon -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-papbXvIh7I5ndyRpqzN3gFQmjF6A4sy0KU24+bQ5i35vEhW8JuW01wfpLnqN0fZpMxSGL4q6RtkEsmF0hztmHg=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quynh Trang - Portfolio</title>
+  <style>
+    /* Reset and basics */
+    * {
+      margin:0; padding:0; box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
+    body {
+      background: #121212;
+      color: #eee;
+      line-height: 1.6;
+      font-size: 16px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 30px 15px 60px;
+    }
+
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #1c64f2;
+      outline:none;
+    }
+
+    header {
+      max-width: 720px;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+      color: #58a6ff;
+      user-select:none;
+    }
+
+    header img.avatar {
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border: 4px solid #58a6ff;
+      box-shadow: 0 0 10px #58a6ffaa;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+    header img.avatar:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #1c64f2aa;
+    }
+
+    /* About Me Facebook icon link */
+    .about-link {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      background: #1c64f2;
+      padding: 10px 15px;
+      border-radius: 30px;
+      box-shadow: 0 0 12px #1c64f2aa;
+      cursor: pointer;
+      user-select:none;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+    .about-link i {
+      font-size: 1.3rem;
+      color: #fff;
+    }
+    .about-link:hover {
+      background: #58a6ff;
+      box-shadow: 0 0 20px #58a6ffdd;
+      color: #fff;
+    }
+
+    main {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    section {
+      margin-bottom: 48px;
+      border-left: 4px solid #58a6ff;
+      padding-left: 18px;
+      transition: border-color 0.3s ease;
+    }
+    section:hover {
+      border-color: #1c64f2;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+      user-select:none;
+      color: #58a6ff;
+    }
+
+    /* About section */
+    .about-content p {
+      margin-bottom: 12px;
+      font-size: 1rem;
+      font-weight: 400;
+      max-width: 600px;
+    }
+    .about-content p:nth-child(1) {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-top: 8px;
+      color: #1c64f2;
+    }
+    .about-content p:nth-child(2) {
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+    .about-content a.resume-btn {
+      display: inline-block;
+      background: transparent;
+      border: 2px solid #58a6ff;
+      color: #58a6ff;
+      padding: 10px 28px;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      user-select:none;
+      margin-top: 12px;
+      text-decoration:none;
+    }
+    .about-content a.resume-btn:hover {
+      background: #1c64f2;
+      border-color: #1c64f2;
+      color: #fff;
+      box-shadow: 0 0 15px #1c64f2cc;
+    }
+
+    /* Lists style */
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      max-width: 680px;
+      color: #ccc;
+    }
+    ul li {
+      margin-bottom: 10px;
+      font-weight: 400;
+    }
+
+    /* Projects images grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .projects-grid img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 12px #58a6ff44;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .projects-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #1c64f2aa;
+    }
+
+    /* Experience list style */
+    .experience-item {
+      max-width: 700px;
+      margin-bottom: 24px;
+      color: #ddd;
+    }
+    .experience-item h3 {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #58a6ff;
+      margin-bottom: 4px;
+      user-select:none;
+    }
+    .experience-item .date {
+      font-style: italic;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      color: #aabbee;
+      user-select:none;
+    }
+    .experience-item ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      max-width: 650px;
+      color: #ccc;
+    }
+    .experience-item ul li {
+      margin-bottom: 6px;
+      font-weight: 400;
+    }
+
+    /* Contact section */
+    .contact-info {
+      max-width: 680px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      color: #ccc;
+      font-weight: 500;
+      font-size: 1rem;
+      user-select:none;
+    }
+    .contact-info a {
+      color: #58a6ff;
+      word-break: break-word;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: #aaa;
+    }
+    .contact-item i {
+      color: #58a6ff;
+      font-size: 1.2rem;
+      width: 22px;
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 60px;
+      max-width: 720px;
+      text-align: center;
+      font-size: 1rem;
+      color: #666;
+      user-select:none;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header img.avatar {
+        width: 120px;
+        height: 120px;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a81368914c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-<header>
-    <img class="avatar" src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf_&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6" alt="Quynh Trang Avatar" />
+  <header>
     <h1>Hey, I’m Quynh Trang.</h1>
-
-    <div class="social-icons">
-        <a href="https://www.facebook.com/quynhhhhtrangg/" target="_blank" title="Facebook">
-            <i class="fab fa-facebook-square"></i>
-        </a>
-    </div>
-</header>
-
-<section class="about-me">
-    <h2>About Me</h2>
-    <p>
-        I'm Quynh Trang<br />
-        Content Creator<br /><br />
-        I aspire to build a career in digital content creation, particularly on social media platforms. In the short term, I am focused on developing my skills in ideation, content production, and trend analysis to create effective communication materials. In the long term, I aim to become a professional Content Creator who can contribute meaningfully to communication strategies and enhance brand value.
-    </p>
-    <p>Email: <a href="mailto:haanhh2204@gmail.com">haanhh2204@gmail.com</a><br />
-       Location: Cau Giay District, Hanoi</p>
-
-    <a href="https://drive.google.com/file/d/1FwC7Zq4mb0OA3i39Tr5IGceT605d6BVP/view?usp=sharing" target="_blank" rel="noopener">
-        <button class="resume-btn">View Resume</button>
+    <img src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6" alt="Avatar" class="avatar" />
+    <a href="https://www.facebook.com/quynhhhhtrangg/" target="_blank" rel="noopener" class="about-link" aria-label="Facebook Profile">
+      <i class="fab fa-facebook-f"></i> About Me
     </a>
-</section>
+  </header>
 
-<section>
-    <h2>Skills</h2>
-    <ul class="skills-list">
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <p>I'm Quynh Trang</p>
+        <p>Content Creator</p>
+        <p>I aspire to build a career in digital content creation, particularly on social media platforms. In the short term, I am focused on developing my skills in ideation, content production, and trend analysis to create effective communication materials. In the long term, I aim to become a professional Content Creator who can contribute meaningfully to communication strategies and enhance brand value.</p>
+        <p>Email: <a href="mailto:haanhh2204@gmail.com">haanhh2204@gmail.com</a></p>
+        <p>Location: Cau Giay District, Hanoi</p>
+        <a href="https://drive.google.com/file/d/1FwC7Zq4mb0OA3i39Tr5IGceT605d6BVP/view?usp=sharing" target="_blank" rel="noopener" class="resume-btn" aria-label="View Resume">Resume</a>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
         <li>Basic communication and negotiation skills with clients.</li>
         <li>Proficient in essential office software.</li>
         <li>Strong writing skills and ability to create diverse content.</li>
         <li>Effective teamwork and cross-departmental collaboration.</li>
         <li>Adaptability and flexible problem-solving abilities.</li>
         <li>Proficient in design and editing tools such as Canva and Capcut.</li>
-    </ul>
-</section>
+      </ul>
+    </section>
 
-<section>
-    <h2>Abilities</h2>
-    <p><strong>Electric Power University</strong><br />
-    Communications Department</p>
-    <ul>
+    <section id="abilities">
+      <h2>Abilities</h2>
+      <p><strong>Electric Power University - Communications Department</strong></p>
+      <ul>
         <li>Conceptualized and supported the implementation of galas and anniversary events related to the university.</li>
         <li>Managed the club’s Fanpage to increase engagement and attract student participation.</li>
         <li>Participated in planning, coordinating, and promoting events such as Student Day, seminars, and cultural programs.</li>
         <li>Collaborated with the team to execute internal communication campaigns, spreading messages and fostering student connections.</li>
-    </ul>
-</section>
+      </ul>
+    </section>
 
-<section>
-    <h2>My Education</h2>
-    <p><em>Education is not the learning of facts, but the training of the mind to think.</em></p>
-    <p><strong>Electric Power University:</strong> 2021 - 2025<br />
-       <strong>Major:</strong> Business Administration</p>
-</section>
+    <section id="education">
+      <h2>My Education</h2>
+      <p>Education is not the learning of facts, but the training of the mind to think.</p>
+      <p><strong>Electric Power University:</strong> 2021 - 2025</p>
+      <p><strong>Major:</strong> Business Administration</p>
+    </section>
 
-<section>
-    <h2>Projects Made</h2>
-    <div class="projects">
-        <img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/482088310_1346155926559466_4868602605006020842_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHoUuyd4Tx85HIqFso0-z9kOU_K9-42i3k5T8r37jaLeWkNHTSLJnPABQYiYEtnUNxShD2_OTX6t2pwtomssn5r&_nc_ohc=ZcQk9S6OYFYAX_XFfJO&_nc_ht=scontent.fhan5-10.fna&oh=00_AfC69w9u5s7QPhJc2rYegmOmdLqxdvMScNqf6ybXjjkiQA&oe=6831D9F0" alt="Project 1" />
-        <img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/482184840_1952164467960980_7039979869675919981_n.jpg?stp=dst-jpg_p526x296&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFGqUtaEKRa6n2yJRYzywzF_c4uXrAfhrzS0d3Az0LT1JpIUOdSvBk6-3O5PpgoMLLtqzA38MavGqcl_y1NNwJ1&_nc_ohc=fhANF_Lv2vYAX-mWcEX&_nc_ht=scontent.fhan5-10.fna&oh=00_AfCCVRdyE-f67spY1pX6d9fzRDaxIx7v9rs0rQleD7G2vQ&oe=6832A772" alt="Project 2" />
-        <img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/482190191_1231311211690865_4340180646278167587_n.jpg?stp=dst-jpg_p526x296&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHc1OYZrRSx3r6vFQOPu9V1bNyELgXshwpMxShsD2ojK-OSu0nDf9aXtK8IDg_a7lYk-3Hk73mnPjo1lhlRkdHg&_nc_ohc=vnS2wHP_6C4AX-Vu7y6&_nc_ht=scontent.fhan5-10.fna&oh=00_AfBOzBy7n_6fDUQjPOQWSCZufb0o_wKg6Ks6j3t5uMMlbg&oe=6832A4CF" alt="Project 3" />
-    </div>
-</section>
+    <section id="projects">
+      <h2>Projects Made</h2>
+      <div class="projects-grid" aria-label="Projects image gallery">
+        <img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/482088310_1346155926559466_4868602605006020842_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHoUuyd4Tx85HIqFso0-z9kOU_K9-42i3k5T8r37jaLeWkNHTSLJnPABQYiYEtnUNxShD2_OTX6t2pwtomssn5r&_nc_ohc=qZuymqmTrL4Q7kNvwHCfSCH&_nc_oc=AdnEn3m01dMJAjCv2kNGGnBPIxc271hOoH4WW7DEoTXO0k03aWQYyZj5r2NEnH_Y_i4&_nc_zt=23&_nc_ht=scontent.fhan5-10.fna&_nc_gid=4uTXVvgr5CUv0S40uEyffw&oh=00_AfIn9jqqHmJexL3bneIUM7k4XltrqMe4qRGiehkgnY1O8g&oe=682D4CBD" alt="Project 1" />
+        <img src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/481273044_1344179780090414_7716386280898752817_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEZRCQtQrnePwsrX3krMQeeH26hkVrE1EAfbqGRWsTUQPM87DhDHpus636RLxmuyLyk6HSOSX7w_9pnvQGI3CRI&_nc_ohc=Pb7qZqqVriwQ7kNvwFM35rj&_nc_oc=AdmcUfGgVBHCtXWtq5Ah9pC40L5pC0TC06yXof1WkwnYjfn18w-VJtxqFhJYNGGTQyQ&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=zUZ72BWW3mMiU2ETI78MWw&oh=00_AfIpkPA0Rg2Ika5Km0C-V3sIqkzx0JhUEvNtV1-g2964sg&oe=682D3DB1" alt="Project 2" />
+        <img src="https://scontent.fhan5-2.fna.fbcdn.net/v/t39.30808-6/493306957_1226845886112309_8852092623907302968_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFp8GlF9RKmNf2I7xYjZejxD0-BdId6IP8PT4F0h3og_98iNaomsa2gvRzb1gjxA4lvb2qVP1kEi4zoj2Frdx_Y&_nc_ohc=WBmAi_62D2YQ7kNvwHeJtlA&_nc_oc=AdkinzFrzWTcnaHhyJ0Yc5-cs62QzMNuyyt8lvI3zGH98sPjheIwqtd2l3XmuBtqfDE&_nc_zt=23&_nc_ht=scontent.fhan5-2.fna&_nc_gid=9b7fIFWI1Gupsl00zbSJ4w&oh=00_AfJ9QI-WPLPH2r3gzWu0lUQI_6fEIIBdXrpLBaO2tj2cCQ&oe=682D732F" alt="Project 3" />
+        <img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/480773442_611049221556581_2441526556231819358_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEDJcVKOk_-NuV4OaiMfH_m_M_Ma5d40Vr8z8xrl3jRWoAiZ66cQJkoRv5ws_SoxFEXkWdjNVmsueDBI_vCSzlg&_nc_ohc=ul4EeTzbV38Q7kNvwFzmEJI&_nc_oc=Adm5-24EvGnfpOuzIa_N_1WqUNLb3JkgzY-c9jgVBdXw1CLc3JKJle1SuL8pkrQ6-3A&_nc_zt=23&_nc_ht=scontent.fhan5-10.fna&_nc_gid=JQRs65BOO6ShbfntB_fQQg&oh=00_AfLktLGguwj5Oj68YsGJTFLkUjpVoTKy56CH80Ml47F4UA&oe=682D4CE0" alt="Project 4" />
+        <img src="https://scontent.fhan5-6.fna.fbcdn.net/v/t39.30808-6/475974387_596109389717231_400819418207116640_n.jpg?stp=cp6_dst-jpg_s640x640_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHGzBPV1hElfiN9H32e3NaFSKUxXbjErutIpTFduMSu67g_V7-hYfcKObi2lT8kvR9SsDrk5EniJLl0dxloZFLd&_nc_ohc=1fAkn99PJ-YQ7kNvwE0i2B8&_nc_oc=Adno0EArsbNTtgubLKXWw8vv88-AtVDSbLy8g_akIaDBPQimxgPtIYn5Y6hcjkUdyEw&_nc_zt=23&_nc_ht=scontent.fhan5-6.fna&_nc_gid=8gCSULEaDA1LHtU1jgs10Q&oh=00_AfJUUO18FCu5Ue_yyIfPy9ML_S28GKzGogwxIVscNcpImw&oe=682D6654" alt="Project 5" />
+        <img src="https://scontent.fhan5-8.fna.fbcdn.net/v/t39.30808-6/474552883_589649297029907_5752310149884590396_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEQ2RPSdFJZl5Wb3YawiuGFYHpc_rnJ-V5gelz-ucn5XpcYdhByfu6rLSUkGC8CbUElrVi3tKrCdJKgb8_RhZw5&_nc_ohc=dVvypa-Ms3cQ7kNvwHqq3-b&_nc_oc=AdlcU1SeiEjpyFJATZOn_osFHcNRIawFghePgDX4MuNlCirSPvnu5yspKV7YPRamIdE&_nc_zt=23&_nc_ht=scontent.fhan5-8.fna&_nc_gid=jHZ9sapKMCIAbqC-GqYlCQ&oh=00_AfLCmYqr6TqlwC8j-3LR0nw9aqU7AjOyWVmvn5NUpoB-Vw&oe=682D5740" alt="Project 6" />
+      </div>
+    </section>
 
-<section class="experience">
-    <h2>Experience</h2>
-    <p><strong>Current:</strong> Content Creator at Electric Power University Communications Club</p>
-    <ul>
-        <li>Created multimedia content for Facebook and other social media channels.</li>
-        <li>Coordinated with teams for event promotion and audience engagement.</li>
-    </ul>
-</section>
+    <section id="experience">
+      <h2>Experience</h2>
+      <article class="experience-item">
+        <h3>Intalent Vietnam - Internal Communications</h3>
+        <div class="date">02/2023 – 10/2023</div>
+        <ul>
+          <li>Managed and developed content for the company’s page, attracting over 500 organic likes and followers.</li>
+          <li>Designed materials for important internal events.</li>
+          <li>Coordinated email marketing campaigns to improve engagement and enhance brand awareness.</li>
+          <li>Planned regular content production and wrote articles for the website and social media channels (Fanpage, LinkedIn, etc.).</li>
+          <li>Participated in content creation and proposed strategies for communication and marketing projects.</li>
+        </ul>
+      </article>
+      <article class="experience-item">
+        <h3>Human Solutions Vietnam - Content Creator</h3>
+        <div class="date">10/2023 – 03/2025</div>
+        <ul>
+          <li>Developed content plans and collaborated with the Marketing team to implement ideas.</li>
+          <li>Wrote and managed content (articles, images) for the company’s social media pages.</li>
+          <li>Monitored new trends on TikTok and proposed ideas aligned with the brand.</li>
+          <li>Conducted seeding activities on Facebook groups.</li>
+          <li>Tracked and updated channel information and reported weekly results.</li>
+          <li>Coordinated and assisted the team during photo shoots and video recordings.</li>
+        </ul>
+      </article>
+    </section>
 
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Thank you for visiting my personal portfolio website. Connect with me over socials.</p>
+      <div class="contact-info">
+        <div class="contact-item"><i class="fas fa-phone-alt"></i> 0363036002</div>
+        <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:haanhh2204@gmail.com">haanhh2204@gmail.com</a></div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
+
