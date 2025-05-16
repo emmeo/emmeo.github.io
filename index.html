@@ -21,7 +21,7 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      padding: 30px 15px 60px;
+      padding: 100px 15px 60px; /* padding-top for fixed nav */
     }
 
     a {
@@ -65,6 +65,42 @@
       box-shadow: 0 0 20px #1c64f2aa;
     }
 
+    /* Fixed top navigation menu */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #121212ee;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #58a6ff88;
+      box-shadow: 0 2px 8px rgb(24 39 63 / 0.1);
+      z-index: 9999;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select:none;
+    }
+    nav ul {
+      list-style:none;
+      display: flex;
+      gap: 30px;
+      font-weight: 700;
+    }
+    nav ul li {
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 8px 10px;
+      border-radius: 6px;
+      color: #58a6ff;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    nav ul li:hover,
+    nav ul li.active {
+      background-color: #1c64f2;
+      color: white;
+      box-shadow: 0 0 15px #1c64f2bb;
+    }
+
     /* About Me Facebook icon link */
     .about-link {
       position: absolute;
@@ -104,6 +140,7 @@
       border-left: 4px solid #58a6ff;
       padding-left: 18px;
       transition: border-color 0.3s ease;
+      scroll-margin-top: 80px; /* offset for fixed nav */
     }
     section:hover {
       border-color: #1c64f2;
@@ -269,11 +306,31 @@
       .projects-grid {
         grid-template-columns: 1fr;
       }
+
+      nav ul {
+        gap: 15px;
+      }
+      nav ul li {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+      }
     }
   </style>
   <script src="https://kit.fontawesome.com/a81368914c.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <nav aria-label="Primary Navigation">
+    <ul>
+      <li class="nav-item active"><a href="#about">About</a></li>
+      <li class="nav-item"><a href="#skills">Skills</a></li>
+      <li class="nav-item"><a href="#abilities">Abilities</a></li>
+      <li class="nav-item"><a href="#education">Education</a></li>
+      <li class="nav-item"><a href="#projects">Projects</a></li>
+      <li class="nav-item"><a href="#experience">Experience</a></li>
+      <li class="nav-item"><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <header>
     <h1>Hey, I’m Quynh Trang.</h1>
     <img src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6" alt="Avatar" class="avatar" />
@@ -373,6 +430,30 @@
       </div>
     </section>
   </main>
+  <script>
+    // Highlight nav item on scroll:
+    const sections = document.querySelectorAll('section');
+    const navLi = document.querySelectorAll('nav ul li');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const scrollY = window.pageYOffset;
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if(scrollY >= sectionTop){
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLi.forEach(li => {
+        li.classList.remove('active');
+        if(li.querySelector('a').getAttribute('href') === '#' + current){
+          li.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
 
