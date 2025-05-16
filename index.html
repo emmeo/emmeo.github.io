@@ -5,178 +5,170 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Quynh Trang Portfolio</title>
 <style>
-  /* Reset */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f9f9f9;
+    color: #0a2540;
+    overflow-x: hidden;
   }
-  body, html {
-    height: 100%;
-    background-color: #121212;
-    color: #eee;
-  }
-  #container {
+  nav {
     display: flex;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  /* Sidebar */
-  #sidebar {
-    width: 280px;
-    background-color: #1f1f1f;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 2rem 1rem;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: #fff;
+    box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
   }
-  #sidebar img.avatar {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    border: 3px solid #1db954;
-    object-fit: cover;
-    margin-bottom: 1.5rem;
+  nav .logo {
+    font-weight: bold;
+    font-size: 24px;
+    color: #0a2540;
   }
-  #sidebar h2 {
-    font-size: 1.6rem;
-    margin-bottom: 2rem;
-    color: #1db954;
-  }
-
-  /* Nav */
-  #nav {
-    width: 100%;
-  }
-  #nav ul {
+  nav ul {
     list-style: none;
+    display: flex;
+    gap: 30px;
   }
-  #nav li {
-    margin-bottom: 1.5rem;
-  }
-  #nav button {
-    width: 100%;
-    background: none;
-    border: none;
-    color: #eee;
-    font-size: 1.1rem;
-    text-align: left;
-    padding: 0.7rem 1rem;
-    border-radius: 6px;
+  nav ul li {
+    font-weight: 500;
     cursor: pointer;
+  }
+  nav ul li.active {
+    color: #1e40af;
+    border-bottom: 2px solid #1e40af;
+    padding-bottom: 2px;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 40px auto;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 0 20px;
+  }
+  .left-content {
+    max-width: 600px;
+  }
+  .left-content h1 {
+    font-size: 48px;
+    margin: 0 0 10px 0;
+    font-weight: 800;
+  }
+  .left-content h1 .highlight {
+    color: #ff6a00;
+  }
+  .dynamic-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: #9b2c2c; /* dark red */
+    min-height: 32px;
+    margin-bottom: 30px;
+  }
+  .btn-about {
+    display: inline-flex;
+    align-items: center;
+    background-color: #3b82f6;
+    color: white;
+    padding: 14px 26px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 5px 10px rgba(59,130,246,0.4);
     transition: background-color 0.3s ease;
   }
-  #nav button:hover, #nav button.active {
-    background-color: #1db954;
-    color: #121212;
+  .btn-about:hover {
+    background-color: #2563eb;
   }
-  #nav svg {
-    fill: currentColor;
-    width: 22px;
-    height: 22px;
+  .btn-about svg {
+    margin-left: 10px;
+    width: 18px;
+    height: 18px;
   }
-
-  /* Content */
-  #content {
-    flex: 1;
-    padding: 3rem 4rem;
-    overflow-y: auto;
-  }
-  section {
-    display: none;
-    animation: fadeIn 0.5s ease forwards;
-  }
-  section.active {
-    display: block;
-  }
-
-  /* Fade in animation */
-  @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-
-  /* Social links under avatar */
-  #social {
-    margin-top: auto;
+  .social-icons {
+    margin-top: 25px;
     display: flex;
-    gap: 1rem;
+    gap: 15px;
   }
-  #social a {
-    color: #eee;
-    transition: color 0.3s ease;
+  .social-icons a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-color: #1e293b;
+    border-radius: 50%;
+    color: #38bdf8;
+    text-align: center;
+    line-height: 36px;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
   }
-  #social a:hover {
-    color: #1877f2; /* facebook blue */
+  .social-icons a:hover {
+    background-color: #0284c7;
   }
-  #social svg {
-    width: 28px;
-    height: 28px;
-    fill: currentColor;
+  .right-content img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid #ffb400;
+    box-shadow: 0 5px 15px rgba(255, 180, 0, 0.5);
   }
 </style>
 </head>
 <body>
 
-<div id="container">
-  <aside id="sidebar">
-    <img
-      class="avatar"
-      src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf_&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6"
-      alt="Quynh Trang"
-    />
-    <h2>Quynh Trang</h2>
-    <nav id="nav">
-      <ul>
-        <li><button class="nav-btn active" data-section="home">
-          <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg> Home
-        </button></li>
-        <li><button class="nav-btn" data-section="about">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M12 14c-4 0-7 2-7 5v1h14v-1c0-3-3-5-7-5z"/></svg> About Me
-        </button></li>
-      </ul>
-    </nav>
-    <div id="social">
-      <a href="https://www.facebook.com/quynhhhhtrangg/" target="_blank" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.466.099 2.797.143v3.243l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.312h3.588l-.467 3.622h-3.12V24h6.116c.73 0 1.326-.597 1.326-1.326V1.326C24 .597 23.403 0 22.675 0z"/>
+<nav>
+  <div class="logo">Quynh Trang</div>
+  <ul>
+    <li class="active">Home</li>
+    <li>About</li>
+    <li>Skills</li>
+    <li>Education</li>
+    <li>Work</li>
+    <li>Experience</li>
+    <li>Contact</li>
+  </ul>
+</nav>
+
+<div class="container">
+  <div class="left-content">
+    <h1>Hello, I am <span class="highlight">Quynh Trang</span></h1>
+    <div class="dynamic-text" id="dynamic-text"></div>
+
+    <a href="https://www.facebook.com/quynhhhhtrangg/" target="_blank" class="btn-about" title="About Me on Facebook">
+      About Me
+      <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 5v14m7-7H5"></path>
+      </svg>
+    </a>
+
+    <div class="social-icons" style="margin-top: 20px;">
+      <a href="https://www.facebook.com/quynhhhhtrangg/" target="_blank" title="Facebook" aria-label="Facebook">
+        <!-- Facebook SVG Icon -->
+        <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.675 0h-21.35C.59 0 0 .588 0 1.313v21.374C0 23.41.59 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.408c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.464.099 2.797.143v3.24h-1.92c-1.506 0-1.798.717-1.798 1.77v2.32h3.594l-.468 3.622h-3.126V24h6.127c.732 0 1.323-.59 1.323-1.313V1.313c0-.725-.59-1.313-1.324-1.313z"/>
         </svg>
       </a>
     </div>
-  </aside>
-
-  <main id="content">
-    <section id="home" class="active">
-      <h1>Xin chào, tôi là Quynh Trang</h1>
-      <p>Chào mừng bạn đến với trang cá nhân của tôi!</p>
-    </section>
-    <section id="about">
-      <h1>About Me</h1>
-      <p>Mình là người đam mê sáng tạo nội dung số và kể chuyện qua các nền tảng kỹ thuật số.</p>
-    </section>
-  </main>
+  </div>
+  <div class="right-content">
+    <img src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf_&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6" alt="Quynh Trang Avatar" />
+  </div>
 </div>
 
 <script>
-  // Navigation functionality
-  const navButtons = document.querySelectorAll('.nav-btn');
-  const sections = document.querySelectorAll('main section');
+  const dynamicWords = ["Web Developer", "UI/UX Designer", "Content Creator", "Digital Marketer", "Tech Enthusiast"];
+  let currentIndex = 0;
+  const dynamicTextEl = document.getElementById("dynamic-text");
 
-  navButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Remove active from all buttons and sections
-      navButtons.forEach(b => b.classList.remove('active'));
-      sections.forEach(s => s.classList.remove('active'));
-
-      // Activate clicked button and corresponding section
-      btn.classList.add('active');
-      const targetId = btn.getAttribute('data-section');
-      document.getElementById(targetId).classList.add('active');
-    });
-  });
+  function updateDynamicText() {
+    dynamicTextEl.textContent = dynamicWords[currentIndex];
+    currentIndex = (currentIndex + 1) % dynamicWords.length;
+  }
+  updateDynamicText();
+  setInterval(updateDynamicText, 2500);
 </script>
 
 </body>
