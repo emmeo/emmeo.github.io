@@ -1,470 +1,777 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Quynh Trang - Portfolio</title>
-  <style>
-    /* IMPORT GOOGLE FONTS */
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="keywords" content="Quynh Trang, portfolio, content creator, personal portfolio" />
+<meta name="description" content="Welcome to Quynh Trang's Portfolio. Content Creator" />
+<title>Portfolio | Quynh Trang</title>
 
-    /* RESET */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-    html, body {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      background: #f9fafd;
-      color: #212121;
-      height: 100%;
-    }
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
-    a {
-      color: #1774f2;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover, a:focus {
-      color: #0d46aa;
-      outline: none;
-    }
+<style>
+  /* Import Poppins font */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-    /* NAVIGATION */
-    nav {
+  /* Reset CSS */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body, h1, h2, h3, p, ul, li, a, input, textarea, button {
+    margin: 0; padding: 0; border: 0; font-weight: normal; font-family: 'Poppins', sans-serif;
+  }
+  body {
+    background: url('https://i.pinimg.com/originals/12/94/95/129495f8e687ca1d7bcc70ac50e0b88a.gif') no-repeat center center fixed;
+    background-size: cover;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #222;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+    color: #2060f0;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  a:hover, a:focus {
+    color: #0931fc;
+    outline: none;
+  }
+  ul {
+    list-style-position: inside;
+  }
+  /* Header */
+  header {
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 70px;
+    background: rgba(255 255 255 / 0.9);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 1px solid #d9dce1;
+    box-shadow: 0 8px 16px rgb(32 96 253 / 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 9999;
+    user-select: none;
+  }
+  header .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2060f0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  header .logo i {
+    font-size: 30px;
+  }
+  nav.navbar {
+    display: flex;
+  }
+  nav.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+  }
+  nav.navbar ul li a {
+    color: #2060f0;
+    padding-bottom: 5px;
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  nav.navbar ul li a.active,
+  nav.navbar ul li a:hover,
+  nav.navbar ul li a:focus {
+    color: #0931fc;
+    border-bottom-color: #2060f0;
+  }
+  #menu {
+    display: none;
+  }
+  /* Hero Section */
+  section.home {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    padding: 70px 40px 40px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  #particles-js {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+  }
+  .content {
+    max-width: 580px;
+    z-index: 1;
+  }
+  .content h2 {
+    font-size: 3.6rem;
+    font-weight: 700;
+    color: #2060f0;
+    margin-bottom: 18px;
+    line-height: 1.1;
+  }
+  .content h2 span {
+    color: #0931fc;
+  }
+  .content p {
+    font-size: 1.3rem;
+    margin-bottom: 32px;
+  }
+  .btn {
+    background: #2060f0;
+    color: #fff;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+  }
+  .btn:hover, .btn:focus {
+    background: #0931fc;
+    outline: none;
+  }
+  .socials {
+    margin-top: 20px;
+  }
+  .social-icons {
+    display: flex;
+    gap: 12px;
+  }
+  .social-icons li a {
+    color: #2060f0;
+    font-size: 1.6rem;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    background: rgba(32,96,240,0.1);
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .social-icons li a:hover {
+    color: #0931fc;
+    background: rgba(9,49,252,0.25);
+  }
+  .image {
+    max-width: 400px;
+    z-index: 1;
+  }
+  .image img {
+    max-width: 100%;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(32, 96, 240, 0.3);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  .image img:hover, .image img:focus {
+    transform: scale(1.05);
+    outline: none;
+  }
+  /* Sections */
+  section {
+    max-width: 720px;
+    margin: 60px auto;
+    background: #fff;
+    border-left: 6px solid #2060f0;
+    border-radius: 14px;
+    padding: 40px 48px 48px 54px;
+    box-shadow: 0 8px 25px rgba(32, 96, 240, 0.1);
+    scroll-margin-top: 100px;
+    user-select: none;
+  }
+  section:hover,
+  section:focus-within {
+    border-left-color: #0931fc;
+    outline: none;
+    box-shadow: 0 12px 35px rgba(32, 96, 240, 0.25);
+  }
+  section h2 {
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: #2060f0;
+    margin-bottom: 32px;
+  }
+  /* About Section */
+  .about .row {
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+  }
+  .about .image,
+  .about .content {
+    flex: 1 1 290px;
+  }
+  .about .content h3 {
+    font-weight: 700;
+    font-size: 2rem;
+    color: #0931fc;
+    margin-bottom: 8px;
+  }
+  .about .content .tag {
+    font-weight: 600;
+    color: #2060f0;
+    font-style: italic;
+    margin-bottom: 24px;
+    display: block;
+  }
+  .about .content p {
+    margin-bottom: 20px;
+    color: #444;
+    font-size: 1rem;
+  }
+  .box-container {
+    margin-top: 24px;
+  }
+  .box {
+    color: #555;
+    font-weight: 600;
+  }
+  .box p span {
+    color: #2060f0;
+    font-weight: 700;
+  }
+  .resumebtn {
+    margin-top: 28px;
+  }
+  .resumebtn .btn {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 14px 40px;
+    border-radius: 30px;
+    background: #2060f0;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+  }
+  .resumebtn .btn:hover, .resumebtn .btn:focus {
+    background: #0931fc;
+    outline: none;
+  }
+  /* Skills Section */
+  .skills .container #skillsContainer ul {
+    list-style: disc;
+    padding-left: 20px;
+    color: #444;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .skills .container #skillsContainer ul li {
+    margin-bottom: 12px;
+  }
+  /* Education Section */
+  .education .box-container {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .education .box {
+    flex: 1 1 320px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgb(32 96 240 / 0.1);
+    overflow: hidden;
+    background: white;
+  }
+  .education .box .image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  .education .box .content {
+    padding: 20px;
+  }
+  .education .box .content h3 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #2060f0;
+    margin-bottom: 10px;
+  }
+  .education .box .content p {
+    color: #555;
+  }
+  .education .qoute {
+    font-style: italic;
+    font-weight: 600;
+    color: #2060f0;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  /* Work Section */
+  .work .box-container {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .work .box {
+    flex: 1 1 300px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgb(32 96 240 / 0.15);
+    cursor: pointer;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+  }
+  .work .box:hover {
+    box-shadow: 0 10px 30px rgb(32 96 240 / 0.3);
+  }
+  .work .box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 6px solid #2060f0;
+  }
+  .work .box .content {
+    padding: 16px;
+  }
+  .work .box .content .tag h3 {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #0931fc;
+    margin-bottom: 12px;
+  }
+  .work .box .content .desc p {
+    color: #444;
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+  .work .box .content .btns {
+    display: flex;
+    gap: 16px;
+  }
+  .work .box .content .btns a.btn {
+    background: #2060f0;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease;
+  }
+  .work .box .content .btns a.btn:hover {
+    background: #0931fc;
+  }
+  /* Timeline Experience */
+  .experience .timeline {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #2060f0;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  .container {
+    padding: 12px 24px;
+    position: relative;
+    background: #fff;
+    width: 50%;
+    box-shadow: 0 6px 25px rgb(32 96 240 / 0.15);
+    border-radius: 8px;
+    margin-bottom: 36px;
+    user-select:none;
+  }
+  .container.right {
+    left: 50%;
+  }
+  .container.left {
+    left: 0;
+  }
+  .container.right::after, .container.left::after {
+    content: '';
+    position: absolute;
+    width: 25px; height: 25px;
+    right: -13px;
+    background-color: white;
+    border: 4px solid #2060f0;
+    top: 24px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .container.left::after {
+    left: -13px;
+  }
+  .content {
+    padding: 14px 16px;
+  }
+  .tag h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2060f0;
+    margin-bottom: 10px;
+  }
+  .desc h3 {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  .desc p {
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 0;
+  }
+  /* Contact Section */
+  section.contact {
+    text-align: center;
+  }
+  section.contact h2 {
+    margin-bottom: 32px;
+  }
+  .contact-info {
+    display: inline-flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #444;
+  }
+  .contact-item i {
+    color: #2060f0;
+    font-size: 1.8rem;
+    width: 32px;
+  }
+  .contact-item a {
+    color: #2060f0;
+  }
+  @media (max-width: 860px) {
+    .container {
+      width: 90vw;
+      padding: 24px;
+    }
+    .timeline::after {
+      left: 8px;
+    }
+    .container.right, .container.left {
       width: 100%;
-      height: 70px;
-      background: #fff;
-      position: fixed;
-      top: 0; left: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 1000;
+      left: 0;
+      margin-left: 0;
+      margin-bottom: 36px;
     }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-      font-weight: 600;
-      font-size: 1rem;
+    .container.right::after, .container.left::after {
+      left: 15px;
+      right: auto;
     }
-    nav ul li {
-      cursor: pointer;
-      padding: 10px 15px;
-      border-radius: 12px;
-      color: #1774f2;
-      user-select: none;
-      display: flex;
-      align-items: center;
-    }
-    nav ul li.active,
-    nav ul li:hover {
-      background-color: #1774f2;
-      color: #fff;
-      box-shadow: 0 0 15px #1774f2aa;
-      transition: all 0.3s ease;
-    }
-
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      margin-top: 100px;
-      padding: 0 20px 60px;
-    }
-
+  }
+  @media (max-width: 480px) {
     header {
-      text-align: center;
-      margin-bottom: 60px;
-      position: relative;
+      flex-direction: column;
+      height: auto;
+      padding: 10px 15px;
     }
-    header h1 {
-      font-weight: 700;
-      font-size: 3.3rem;
-      color: #1774f2;
-      margin-bottom: 24px;
-      user-select:none;
+    nav.navbar ul {
+      flex-wrap: wrap;
+      gap: 15px;
     }
-    header img.avatar {
-      border-radius: 50%;
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border: 4px solid #1774f2;
-      box-shadow: 0 2px 15px rgba(23,116,242,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-    header img.avatar:hover {
-      transform: scale(1.08);
-      box-shadow: 0 4px 25px rgba(23,116,242,0.5);
-    }
-
-    /* Facebook About Me Button */
-    .about-link {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: #1774f2;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 40px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      box-shadow: 0 0 15px #1774f2aa;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      user-select: none;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-    .about-link i {
-      font-size: 1.3rem;
-    }
-    .about-link:hover,
-    .about-link:focus {
-      background-color: #0d46aa;
-      box-shadow: 0 0 22px #0d46aabb;
-      outline:none;
-    }
-
-    section {
-      padding-left: 18px;
-      border-left: 5px solid #1774f2;
-      margin-bottom: 60px;
-      scroll-margin-top: 90px;
-    }
-    section:hover {
-      border-left-color: #0d46aa;
-    }
-    section h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 30px;
-      color: #1774f2;
-      user-select:none;
-    }
-
-    /* About Content */
-    .about-content p {
-      margin-bottom: 18px;
-      color: #3a3a3a;
-      font-size: 1.05rem;
-      max-width: 650px;
-    }
-    .about-content p:first-child {
-      font-weight: 700;
-      font-size: 1.35rem;
-      color: #0d46aa;
-    }
-    .about-content p:nth-child(2) {
-      font-style: italic;
-      font-weight: 600;
-      margin-bottom: 24px;
-      color: #1774f2;
-    }
-    .about-content a.resume-btn {
-      border: 2px solid #1774f2;
-      background-color: transparent;
-      color: #1774f2;
-      font-weight: 700;
-      text-decoration: none;
-      border-radius: 30px;
-      padding: 12px 38px;
-      display: inline-block;
-      cursor: pointer;
-      user-select:none;
-      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-    }
-    .about-content a.resume-btn:hover,
-    .about-content a.resume-btn:focus {
-      background-color: #1774f2;
-      color: white;
-      box-shadow: 0 0 30px #1774f2cc;
-      outline: none;
-    }
-
-    /* Lists with circles */
-    ul {
-      list-style-type: disc;
-      margin-left: 24px;
-      color: #4d4d4d;
-    }
-    ul li {
+    header .logo {
       margin-bottom: 12px;
-      font-weight: 500;
-      line-height: 1.5;
+      font-size: 22px;
     }
-
-    /* Projects grid */
+    .hero h2 {
+      font-size: 2.3rem;
+    }
+    section {
+      padding: 30px 24px 30px 28px;
+    }
     .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      grid-template-columns: 1fr;
       gap: 20px;
     }
-    .projects-grid img {
-      width: 100%;
-      height: 160px;
-      border-radius: 12px;
-      object-fit: cover;
-      cursor: pointer;
-      box-shadow: 0 4px 20px rgb(23 116 242 / 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .projects-grid img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 32px rgb(23 116 242 / 0.35);
-    }
-
-    /* Experience */
-    .experience-item {
-      margin-bottom: 40px;
-      color: #4a4a4a;
-      max-width: 700px;
-    }
-    .experience-item h3 {
-      font-weight: 700;
-      font-size: 1.28rem;
-      color: #1774f2;
-      margin-bottom: 8px;
-      user-select:none;
-    }
-    .experience-item .date {
-      color: #7284a7;
-      font-style: italic;
-      font-weight: 600;
-      margin-bottom: 16px;
-      user-select:none;
-    }
-    .experience-item ul {
-      list-style-type: disc;
-      margin-left: 22px;
-      color: #555555;
-    }
-    .experience-item ul li {
-      margin-bottom: 10px;
-      line-height: 1.5;
-    }
-
-    /* Contact */
-    #contact p {
-      max-width: 660px;
-      margin-bottom: 18px;
-      color: #4a4a4a;
-      font-size: 1rem;
-      font-weight: 500;
-    }
     .contact-info {
-      display: flex;
       flex-direction: column;
-      gap: 18px;
-      max-width: 660px;
-      font-weight: 700;
-      color: #555555;
+      gap: 20px;
     }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      user-select:none;
-    }
-    .contact-item i {
-      font-size: 1.3rem;
-      color: #1774f2;
-      width: 28px;
-      text-align: center;
-    }
-
-    /* Responsive */
-    @media (max-width: 760px) {
-      main {
-        margin-top: 80px;
-        padding: 0 15px 40px;
-      }
-      .projects-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      nav ul {
-        gap: 15px;
-      }
-      nav ul li {
-        padding: 8px 12px;
-        font-size: 0.9rem;
-      }
-      main {
-        margin-top: 70px;
-        padding: 0 12px 30px;
-      }
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-      header h1 {
-        font-size: 2.6rem;
-        margin-bottom: 18px;
-      }
-      header img.avatar {
-        width: 140px;
-        height: 140px;
-      }
-    }
-
-  </style>
-  <script src="https://kit.fontawesome.com/a81368914c.js" crossorigin="anonymous"></script>
+  }
+</style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav aria-label="Primary navigation">
-    <ul>
-      <li class="nav-item active"><a href="#about">About</a></li>
-      <li class="nav-item"><a href="#skills">Skills</a></li>
-      <li class="nav-item"><a href="#abilities">Abilities</a></li>
-      <li class="nav-item"><a href="#education">Education</a></li>
-      <li class="nav-item"><a href="#projects">Projects</a></li>
-      <li class="nav-item"><a href="#experience">Experience</a></li>
-      <li class="nav-item"><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<header>
+    <a href="/" class="logo"><i class="fas fa-user-circle"></i> Quynh Trang</a>
 
-  <header>
-    <h1>Hey, I’m Quynh Trang.</h1>
-    <img class="avatar" alt="Quynh Trang avatar" src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6" />
-    <a href="https://www.facebook.com/quynhhhhtrangg/" target="_blank" rel="noopener" class="about-link" aria-label="Facebook profile link">
-      <i class="fab fa-facebook-f"></i> About Me
+    <div id="menu" class="fas fa-bars"></div>
+    <nav class="navbar">
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+<!-- hero section starts -->
+<section class="home" id="home">
+    <div id="particles-js"></div>
+
+    <div class="content">
+    <h2>Hey, I'm <br> Quynh <span>Trang</span></h2>
+    <p></p>
+    <a href="#about" class="btn"><span>About Me</span>
+      <i class="fas fa-arrow-circle-down"></i>
     </a>
-  </header>
+    <div class="socials">
+        <ul class="social-icons">
+          <li><a class="facebook" aria-label="Facebook" href="https://www.facebook.com/quynhhhhtrangg/" target="_blank"><i class="fab fa-facebook-f"></i></a></li> 
+        </ul>
+      </div>
+    </div>
+<div class="image">
+    <img draggable="false" class="tilt" src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6" alt="">
+</div>
+</section>
+<!-- hero section ends -->
 
-  <main>
+<!-- about section starts -->
+<section class="about" id="about">
+    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
+    
+    <div class="row">
 
-    <section id="about" tabindex="0">
-      <h2>About Me</h2>
-      <div class="about-content">
-        <p>I'm Quynh Trang</p>
-        <p>Content Creator</p>
+    <div class="image">
+        <img draggable="false" class="tilt" src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/482001918_1398617381504621_4391062838987092942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhlkye3dY5KrCGfnd0p_3WRIO8g_RSHZFEg7yD9FIdkVWX69ldzIU_MTKWlOqb-9nKPBeV5MdQlF0b-qVDHEf&_nc_ohc=1h2VEEnDL88Q7kNvwEGYH1v&_nc_oc=AdlijH6P1sACSYiEazIsDYTnKWRR8JlGsE49HbZDbSiUQc6aP4m_6hYKegfVGOsyoBg&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=jyn_RbZ-YSUazWIwZ6N34A&oh=00_AfJnz095ctYHpJQ6uNn2u7gVLTPFTTueA48XNXba8v75eg&oe=682D60F6" alt="">
+    </div>
+    <div class="content">
+        <h3>I'm Quynh Trang</h3>
+        <span class="tag">Content Creator</span>
+        
         <p>I aspire to build a career in digital content creation, particularly on social media platforms. In the short term, I am focused on developing my skills in ideation, content production, and trend analysis to create effective communication materials. In the long term, I aim to become a professional Content Creator who can contribute meaningfully to communication strategies and enhance brand value.</p>
-        <p>Email: <a href="mailto:haanhh2204@gmail.com">haanhh2204@gmail.com</a></p>
-        <p>Location: Cau Giay District, Hanoi</p>
-        <a href="https://drive.google.com/file/d/1FwC7Zq4mb0OA3i39Tr5IGceT605d6BVP/view?usp=sharing" target="_blank" rel="noopener" class="resume-btn" aria-label="Resume link">Resume</a>
+        
+        <div class="box-container">
+            <div class="box">
+              <p><span> email : </span> haanhh2204@gmail.com</p>
+              <p><span> location : </span> Cau Giay District, Hanoi</p>
+            </div>
+        </div>
+        
+        <div class="resumebtn">
+            <a href="https://drive.google.com/file/d/1FwC7Zq4mb0OA3i39Tr5IGceT605d6BVP/view?usp=sharing" target="_blank" class="btn"><span>Resume</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+
+    </div>
+    </div>
+</section>
+<!-- about section ends -->
+
+<!-- skills section starts -->
+<section class="skills" id="skills">
+
+    <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
+
+    <div class="container">
+          <div class="row" id="skillsContainer">
+
+            <ul>
+             <li>Basic communication and negotiation skills with clients.</li>
+             <li>Proficient in essential office software.</li>
+             <li>Strong writing skills and ability to create diverse content.</li>
+             <li>Effective teamwork and cross-departmental collaboration.</li>
+             <li>Adaptability and flexible problem-solving abilities.</li>
+             <li>Proficient in design and editing tools such as Canva and Capcut.</li>
+           </ul>
+
       </div>
-    </section>
+</div>
+</section>
+<!-- skills section ends -->
 
-    <section id="skills" tabindex="0">
-      <h2>Skills</h2>
-      <ul>
-        <li>Basic communication and negotiation skills with clients.</li>
-        <li>Proficient in essential office software.</li>
-        <li>Strong writing skills and ability to create diverse content.</li>
-        <li>Effective teamwork and cross-departmental collaboration.</li>
-        <li>Adaptability and flexible problem-solving abilities.</li>
-        <li>Proficient in design and editing tools such as Canva and Capcut.</li>
-      </ul>
-    </section>
+<!-- education section starts -->
+<section class="education" id="education">
 
-    <section id="abilities" tabindex="0">
-      <h2>Abilities</h2>
-      <p><strong>Electric Power University - Communications Department</strong></p>
-      <ul>
-        <li>Conceptualized and supported the implementation of galas and anniversary events related to the university.</li>
-        <li>Managed the club’s Fanpage to increase engagement and attract student participation.</li>
-        <li>Participated in planning, coordinating, and promoting events such as Student Day, seminars, and cultural programs.</li>
-        <li>Collaborated with the team to execute internal communication campaigns, spreading messages and fostering student connections.</li>
-      </ul>
-    </section>
+  <h1 class="heading"><i class="fas fa-graduation-cap"></i> My <span>Education</span></h1>
 
-    <section id="education" tabindex="0">
-      <h2>My Education</h2>
-      <p>Education is not the learning of facts, but the training of the mind to think.</p>
-      <p><strong>Electric Power University:</strong> 2021 - 2025</p>
-      <p><strong>Major:</strong> Business Administration</p>
-    </section>
+    <p class="qoute">Education is not the learning of facts, but the training of the mind to think.</p>
 
-    <section id="projects" tabindex="0">
-      <h2>Projects Made</h2>
-      <div class="projects-grid" aria-label="Projects image gallery">
-        <img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/482088310_1346155926559466_4868602605006020842_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHoUuyd4Tx85HIqFso0-z9kOU_K9-42i3k5T8r37jaLeWkNHTSLJnPABQYiYEtnUNxShD2_OTX6t2pwtomssn5r&_nc_ohc=qZuymqmTrL4Q7kNvwHCfSCH&_nc_oc=AdnEn3m01dMJAjCv2kNGGnBPIxc271hOoH4WW7DEoTXO0k03aWQYyZj5r2NEnH_Y_i4&_nc_zt=23&_nc_ht=scontent.fhan5-10.fna&_nc_gid=4uTXVvgr5CUv0S40uEyffw&oh=00_AfIn9jqqHmJexL3bneIUM7k4XltrqMe4qRGiehkgnY1O8g&oe=682D4CBD" alt="Project 1 image"/>
-        <img src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/481273044_1344179780090414_7716386280898752817_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEZRCQtQrnePwsrX3krMQeeH26hkVrE1EAfbqGRWsTUQPM87DhDHpus636RLxmuyLyk6HSOSX7w_9pnvQGI3CRI&_nc_ohc=Pb7qZqqVriwQ7kNvwFM35rj&_nc_oc=AdmcUfGgVBHCtXWtq5Ah9pC40L5pC0TC06yXof1WkwnYjfn18w-VJtxqFhJYNGGTQyQ&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=zUZ72BWW3mMiU2ETI78MWw&oh=00_AfIpkPA0Rg2Ika5Km0C-V3sIqkzx0JhUEvNtV1-g2964sg&oe=682D3DB1" alt="Project 2 image"/>
-        <img src="https://scontent.fhan5-2.fna.fbcdn.net/v/t39.30808-6/493306957_1226845886112309_8852092623907302968_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFp8GlF9RKmNf2I7xYjZejxD0-BdId6IP8PT4F0h3og_98iNaomsa2gvRzb1gjxA4lvb2qVP1kEi4zoj2Frdx_Y&_nc_ohc=WBmAi_62D2YQ7kNvwHeJtlA&_nc_oc=AdkinzFrzWTcnaHhyJ0Yc5-cs62QzMNuyyt8lvI3zGH98sPjheIwqtd2l3XmuBtqfDE&_nc_zt=23&_nc_ht=scontent.fhan5-2.fna&_nc_gid=9b7fIFWI1Gupsl00zbSJ4w&oh=00_AfJ9QI-WPLPH2r3gzWu0lUQI_6fEIIBdXrpLBaO2tj2cCQ&oe=682D732F" alt="Project 3 image"/>
-        <img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/480773442_611049221556581_2441526556231819358_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEDJcVKOk_-NuV4OaiMfH_m_M_Ma5d40Vr8z8xrl3jRWoAiZ66cQJkoRv5ws_SoxFEXkWdjNVmsueDBI_vCSzlg&_nc_ohc=ul4EeTzbV38Q7kNvwFzmEJI&_nc_oc=Adm5-24EvGnfpOuzIa_N_1WqUNLb3JkgzY-c9jgVBdXw1CLc3JKJle1SuL8pkrQ6-3A&_nc_zt=23&_nc_ht=scontent.fhan5-10.fna&_nc_gid=JQRs65BOO6ShbfntB_fQQg&oh=00_AfLktLGguwj5Oj68YsGJTFLkUjpVoTKy56CH80Ml47F4UA&oe=682D4CE0" alt="Project 4 image"/>
-        <img src="https://scontent.fhan5-6.fna.fbcdn.net/v/t39.30808-6/475974387_596109389717231_400819418207116640_n.jpg?stp=cp6_dst-jpg_s640x640_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHGzBPV1hElfiN9H32e3NaFSKUxXbjErutIpTFduMSu67g_V7-hYfcKObi2lT8kvR9SsDrk5EniJLl0dxloZFLd&_nc_ohc=1fAkn99PJ-YQ7kNvwE0i2B8&_nc_oc=Adno0EArsbNTtgubLKXWw8vv88-AtVDSbLy8g_akIaDBPQimxgPtIYn5Y6hcjkUdyEw&_nc_zt=23&_nc_ht=scontent.fhan5-6.fna&_nc_gid=8gCSULEaDA1LHtU1jgs10Q&oh=00_AfJUUO18FCu5Ue_yyIfPy9ML_S28GKzGogwxIVscNcpImw&oe=682D6654" alt="Project 5 image"/>
-        <img src="https://scontent.fhan5-8.fna.fbcdn.net/v/t39.30808-6/474552883_589649297029907_5752310149884590396_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEQ2RPSdFJZl5Wb3YawiuGFYHpc_rnJ-V5gelz-ucn5XpcYdhByfu6rLSUkGC8CbUElrVi3tKrCdJKgb8_RhZw5&_nc_ohc=dVvypa-Ms3cQ7kNvwHqq3-b&_nc_oc=AdlcU1SeiEjpyFJATZOn_osFHcNRIawFghePgDX4MuNlCirSPvnu5yspKV7YPRamIdE&_nc_zt=23&_nc_ht=scontent.fhan5-8.fna&_nc_gid=jHZ9sapKMCIAbqC-GqYlCQ&oh=00_AfLCmYqr6TqlwC8j-3LR0nw9aqU7AjOyWVmvn5NUpoB-Vw&oe=682D5740" alt="Project 6 image"/>
+    <div class="box-container">
+
+        <div class="box">
+            <div class="content">
+                <h3>Electric Power University</h3>
+                <p>2021 - 2025</p>
+                <p>Major: Business Administration</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- education section ends -->
+
+<!-- work project section starts -->
+<section class="work" id="work">
+
+  <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
+
+  <div class="box-container">
+
+    <div class="box tilt">
+      <img draggable="false" src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/482088310_1346155926559466_4868602605006020842_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHoUuyd4Tx85HIqFso0-z9kOU_K9-42i3k5T8r37jaLeWkNHTSLJnPABQYiYEtnUNxShD2_OTX6t2pwtomssn5r&_nc_ohc=qZuymqmTrL4Q7kNvwHCfSCH&_nc_oc=AdnEn3m01dMJAjCv2kNGGnBPIxc271hOoH4WW7DEoTXO0k03aWQYyZj5r2NEnH_Y_i4&_nc_zt=23&_nc_ht=scontent.fhan5-10.fna&_nc_gid=4uTXVvgr5CUv0S40uEyffw&oh=00_AfIn9jqqHmJexL3bneIUM7k4XltrqMe4qRGiehkgnY1O8g&oe=682D4CBD" alt="Project image 1" />
+    </div>
+    <div class="box tilt">
+      <img draggable="false" src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/481273044_1344179780090414_7716386280898752817_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEZRCQtQrnePwsrX3krMQeeH26hkVrE1EAfbqGRWsTUQPM87DhDHpus636RLxmuyLyk6HSOSX7w_9pnvQGI3CRI&_nc_ohc=Pb7qZqqVriwQ7kNvwFM35rj&_nc_oc=AdmcUfGgVBHCtXWtq5Ah9pC40L5pC0TC06yXof1WkwnYjfn18w-VJtxqFhJYNGGTQyQ&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=zUZ72BWW3mMiU2ETI78MWw&oh=00_AfIpkPA0Rg2Ika5Km0C-V3sIqkzx0JhUEvNtV1-g2964sg&oe=682D3DB1" alt="Project image 2" />
+    </div>
+    <div class="box tilt">
+      <img draggable="false" src="https://scontent.fhan5-2.fna.fbcdn.net/v/t39.30808-6/493306957_1226845886112309_8852092623907302968_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFp8GlF9RKmNf2I7xYjZejxD0-BdId6IP8PT4F0h3og_98iNaomsa2gvRzb1gjxA4lvb2qVP1kEi4zoj2Frdx_Y&_nc_ohc=WBmAi_62D2YQ7kNvwHeJtlA&_nc_oc=AdkinzFrzWTcnaHhyJ0Yc5-cs62QzMNuyyt8lvI3zGH98sPjheIwqtd2l3XmuBtqfDE&_nc_zt=23&_nc_ht=scontent.fhan5-2.fna&_nc_gid=9b7fIFWI1Gupsl00zbSJ4w&oh=00_AfJ9QI-WPLPH2r3gzWu0lUQI_6fEIIBdXrpLBaO2tj2cCQ&oe=682D732F" alt="Project image 3" />
+    </div>
+    <div class="box tilt">
+      <img draggable="false" src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/480773442_611049221556581_2441526556231819358_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEDJcVKOk_-NuV4OaiMfH_m_M_Ma5d40Vr8z8xrl3jRWoAiZ66cQJkoRv5ws_SoxFEXkWdjNVmsueDBI_vCSzlg&_nc_ohc=ul4EeTzbV38Q7kNvwFzmEJI&_nc_oc=Adm5-24EvGnfpOuzIa_N_1WqUNLb3JkgzY-c9jgVBdXw1CLc3JKJle1SuL8pkrQ6-3A&_nc_zt=23&_nc_ht=scontent.fhan5-10.fna&_nc_gid=JQRs65BOO6ShbfntB_fQQg&oh=00_AfLktLGguwj5Oj68YsGJTFLkUjpVoTKy56CH80Ml47F4UA&oe=682D4CE0" alt="Project image 4" />
+    </div>
+    <div class="box tilt">
+      <img draggable="false" src="https://scontent.fhan5-6.fna.fbcdn.net/v/t39.30808-6/475974387_596109389717231_400819418207116640_n.jpg?stp=cp6_dst-jpg_s640x640_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHGzBPV1hElfiN9H32e3NaFSKUxXbjErutIpTFduMSu67g_V7-hYfcKObi2lT8kvR9SsDrk5EniJLl0dxloZFLd&_nc_ohc=1fAkn99PJ-YQ7kNvwE0i2B8&_nc_oc=Adno0EArsbNTtgubLKXWw8vv88-AtVDSbLy8g_akIaDBPQimxgPtIYn5Y6hcjkUdyEw&_nc_zt=23&_nc_ht=scontent.fhan5-6.fna&_nc_gid=8gCSULEaDA1LHtU1jgs10Q&oh=00_AfJUUO18FCu5Ue_yyIfPy9ML_S28GKzGogwxIVscNcpImw&oe=682D6654" alt="Project image 5" />
+    </div>
+    <div class="box tilt">
+      <img draggable="false" src="https://scontent.fhan5-8.fna.fbcdn.net/v/t39.30808-6/474552883_589649297029907_5752310149884590396_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEQ2RPSdFJZl5Wb3YawiuGFYHpc_rnJ-V5gelz-ucn5XpcYdhByfu6rLSUkGC8CbUElrVi3tKrCdJKgb8_RhZw5&_nc_ohc=dVvypa-Ms3cQ7kNvwHqq3-b&_nc_oc=AdlcU1SeiEjpyFJATZOn_osFHcNRIawFghePgDX4MuNlCirSPvnu5yspKV7YPRamIdE&_nc_zt=23&_nc_ht=scontent.fhan5-8.fna&_nc_gid=jHZ9sapKMCIAbqC-GqYlCQ&oh=00_AfLCmYqr6TqlwC8j-3LR0nw9aqU7AjOyWVmvn5NUpoB-Vw&oe=682D5740" alt="Project image 6" />
+    </div>
+
+  </div>
+</section>
+
+<!-- experience section starts -->
+<section class="experience" id="experience">
+
+  <h2 class="heading"><i class="fas fa-briefcase"></i> Experience </h2>
+
+  <div class="timeline">
+
+    <div class="container right">
+      <div class="content">
+        <div class="tag">
+          <h2>Intalent Vietnam</h2>
+        </div>
+        <div class="desc">
+            <h3>Internal Communications</h3>
+            <p>02/2023 – 10/2023</p>
+            <ul>
+                <li>Managed and developed content for the company’s page, attracting over 500 organic likes and followers.</li>
+                <li>Designed materials for important internal events.</li>
+                <li>Coordinated email marketing campaigns to improve engagement and enhance brand awareness.</li>
+                <li>Planned regular content production and wrote articles for the website and social media channels (Fanpage, LinkedIn, etc.).</li>
+                <li>Participated in content creation and proposed strategies for communication and marketing projects.</li>
+            </ul>
+        </div>
       </div>
-    </section>
+    </div>
 
-    <section id="experience" tabindex="0">
-      <h2>Experience</h2>
-      <article class="experience-item">
-        <h3>Intalent Vietnam - Internal Communications</h3>
-        <div class="date">02/2023 – 10/2023</div>
-        <ul>
-          <li>Managed and developed content for the company’s page, attracting over 500 organic likes and followers.</li>
-          <li>Designed materials for important internal events.</li>
-          <li>Coordinated email marketing campaigns to improve engagement and enhance brand awareness.</li>
-          <li>Planned regular content production and wrote articles for the website and social media channels (Fanpage, LinkedIn, etc.).</li>
-          <li>Participated in content creation and proposed strategies for communication and marketing projects.</li>
-        </ul>
-      </article>
-      <article class="experience-item">
-        <h3>Human Solutions Vietnam - Content Creator</h3>
-        <div class="date">10/2023 – 03/2025</div>
-        <ul>
-          <li>Developed content plans and collaborated with the Marketing team to implement ideas.</li>
-          <li>Wrote and managed content (articles, images) for the company’s social media pages.</li>
-          <li>Monitored new trends on TikTok and proposed ideas aligned with the brand.</li>
-          <li>Conducted seeding activities on Facebook groups.</li>
-          <li>Tracked and updated channel information and reported weekly results.</li>
-          <li>Coordinated and assisted the team during photo shoots and video recordings.</li>
-        </ul>
-      </article>
-    </section>
-
-    <section id="contact" tabindex="0">
-      <h2>Contact</h2>
-      <p>Thank you for visiting my personal portfolio website. Connect with me over socials.</p>
-      <div class="contact-info">
-        <div class="contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i> 0363036002</div>
-        <div class="contact-item"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:haanhh2204@gmail.com">haanhh2204@gmail.com</a></div>
+    <div class="container left">
+      <div class="content">
+        <div class="tag">
+          <h2>Human Solutions Vietnam</h2>
+        </div>
+        <div class="desc">
+            <h3>Content Creator</h3>
+            <p>10/2023 – 03/2025</p>
+            <ul>
+                <li>Developed content plans and collaborated with the Marketing team to implement ideas.</li>
+                <li>Wrote and managed content (articles, images) for the company’s social media pages.</li>
+                <li>Monitored new trends on TikTok and proposed ideas aligned with the brand.</li>
+                <li>Conducted seeding activities on Facebook groups.</li>
+                <li>Tracked and updated channel information and reported weekly results.</li>
+                <li>Coordinated and assisted the team during photo shoots and video recordings.</li>
+            </ul>
+        </div>
       </div>
-    </section>
+    </div>
 
-  </main>
+  </div>
+</section>
+<!-- experience section ends -->
 
-  <script>
-    // Highlight nav item on scroll
-    const sections = document.querySelectorAll('section');
-    const navItems = document.querySelectorAll('nav ul li');
+<!-- contact section starts -->
+<section class="contact" id="contact">
+  
+  <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
 
-    window.addEventListener('scroll', () => {
-      let currentSectionId = '';
-      const scrollY = window.pageYOffset;
+  <div class="container">
+    <div class="content">
+      <div class="image-box" style="display:none"></div>
+    <form id="contact-form" style="display:none">
+      
+    </form>
+  </div>
+  </div>
+  <div style="max-width: 720px; margin: 20px auto; color:#444; font-weight: 600;">
+    Thank you for visiting my personal portfolio website. Connect with me over socials.
+    <div class="contact-info" style="margin-top: 10px;">
+      <div class="contact-item"><i class="fas fa-phone-alt"></i> 0363036002</div>
+      <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:haanhh2204@gmail.com">haanhh2204@gmail.com</a></div>
+    </div>
+  </div>
+</section>
 
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 80;
-        if(scrollY >= sectionTop){
-          currentSectionId = section.getAttribute('id');
-        }
-      });
+<!-- minimal script for nav menu toggle and scroll spy -->
+<script>
+  // Nav menu toggle for mobile
+  const menuIcon = document.getElementById('menu');
+  const navbar = document.querySelector('nav.navbar');
+  menuIcon && menuIcon.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+  });
 
-      navItems.forEach(item => {
-        item.classList.remove('active');
-        const anchor = item.querySelector('a').getAttribute('href').substring(1);
-        if(anchor === currentSectionId){
-          item.classList.add('active');
-        }
-      });
+  // Scroll spy to active nav link
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav.navbar ul li a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    const scrollY = window.pageYOffset;
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 85;
+      if(scrollY >= sectionTop){
+        current = section.getAttribute('id');
+      }
     });
-  </script>
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href').substring(1) === current){
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
-
